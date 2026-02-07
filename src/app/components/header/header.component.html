@@ -1,1 +1,26 @@
-<p>header works!</p>
+<header class="hero-header" aria-label="Primary">
+  <div class="hero-header__inner">
+    <a class="hero-header__logo" routerLink="/" aria-label="Marc Odermatt home">
+      <span class="hero-header__logo-text" aria-hidden="true">HK</span>
+    </a>
+
+    <nav class="hero-header__nav" aria-label="Main navigation">
+      <a class="hero-header__link" href="#about">About me</a>
+      <a class="hero-header__link" href="#skills">Skills</a>
+      <a class="hero-header__link" href="#projects">Projects</a>
+      <a class="hero-header__link" href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero-header__language" aria-label="Toggle language">
+      <button class="hero-header__language-btn hero-header__language-btn--active" type="button">
+        EN
+      </button>
+      <span class="hero-header__toggle" aria-hidden="true">
+        <span class="hero-header__toggle-thumb"></span>
+      </span>
+      <button class="hero-header__language-btn" type="button">
+        DE
+      </button>
+    </div>
+  </div>
+</header>
