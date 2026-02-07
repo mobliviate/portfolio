@@ -27,7 +27,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 /* ── Badge "Hello world" ── */
@@ -67,6 +67,7 @@
   width: 145px;
   height: 80px;
   margin-bottom: 32px;
+  align-self: flex-start;
   cursor: pointer;
 
   /* Stop auto-animation on hover, use direct transitions */
@@ -149,20 +150,24 @@
 }
 
 /* ── Headlines ── */
+/* Figma: column, full width, gap 24px */
+/* "Frontend" (~552px) left-aligned, "DEVELOPER" (~713px) right-aligned */
 .hero__headline {
   margin: 0 0 24px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 24px;
 }
 
-/* Figma: 128px, weight 700, line-height 100% */
+/* Figma: 128px, weight 700, line-height 100%, letter-spacing -0.04em */
 .hero__headline-primary {
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 700;
   font-size: clamp(64px, 8.9vw, 128px);
   line-height: 100%;
   letter-spacing: -0.04em;
+  align-self: flex-start;
 }
 
 .hero__headline-secondary {
@@ -172,6 +177,7 @@
   line-height: 100%;
   text-transform: uppercase;
   letter-spacing: -0.04em;
+  align-self: flex-end;
 }
 
 /* ── CTA "Get in Touch" (Figma: 154 × 40) ── */
@@ -208,13 +214,13 @@
   transform: translate(2px, 4px);
 }
 
-/* ── Polaroid (Figma: 204 × 244, right ~48px, overlapping text) ── */
+/* ── Polaroid (Figma: 204 × 244, left 613px from layout, overlapping text) ── */
 .hero__polaroid {
   position: absolute;
   width: 204px;
   height: 244px;
-  right: 40px;
-  top: -38px;
+  left: 613px;
+  top: 6px;
   transform: rotate(8deg);
   pointer-events: none;
   margin: 0;
