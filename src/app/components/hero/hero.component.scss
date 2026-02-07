@@ -30,19 +30,122 @@
   align-items: flex-start;
 }
 
-/* ── Badge "Hello world" (Figma: 145 × 40, mb 32) ── */
+/* ── Badge "Hello world" ── */
+/* Figma: DEFAULT = 145×80 (hand hidden + pill 145×40) */
+/*        HOVER   = 218×80 (hand 40×40 + pill 218×40)  */
+
+/* Keyframes for auto-pulse animation */
+@keyframes badge-width {
+  0%, 60%  { width: 145px; }
+  70%, 90% { width: 218px; }
+  100%     { width: 145px; }
+}
+
+@keyframes badge-default-fade {
+  0%, 60%  { opacity: 1; }
+  70%, 90% { opacity: 0; }
+  100%     { opacity: 1; }
+}
+
+@keyframes badge-hover-fade {
+  0%, 60%  { opacity: 0; }
+  70%, 90% { opacity: 1; }
+  100%     { opacity: 0; }
+}
+
+@keyframes badge-hand-roll {
+  0%, 60%  { opacity: 0; transform: rotate(-180deg); }
+  70%, 90% { opacity: 1; transform: rotate(0deg); }
+  100%     { opacity: 0; transform: rotate(-180deg); }
+}
+
 .hero__badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  border: 1px solid var(--color-white);
-  border-radius: 100px;
-  background: transparent;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 120%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 145px;
+  height: 80px;
   margin-bottom: 32px;
+  cursor: pointer;
+
+  /* Stop auto-animation on hover, use direct transitions */
+  &:hover {
+    animation: none;
+    width: 218px;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    .hero__badge-default {
+      animation: none;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .hero__badge-hover {
+      animation: none;
+      opacity: 1;
+      transition: opacity 0.25s ease;
+    }
+
+    .hero__badge-hand {
+      animation: none;
+      opacity: 1;
+      transform: rotate(0deg);
+      transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}
+
+/* ── Waving hand (Figma: 40×40, rotate -180° → 0°) ── */
+.hero__badge-hand {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  opacity: 0;
+  transform: rotate(-180deg);
+  pointer-events: none;
+}
+
+/* ── Shared pill base ── */
+.hero__badge-default,
+.hero__badge-hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 10px;
+  height: 40px;
+  border-radius: 100px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+  color: var(--color-white);
+  white-space: nowrap;
+  isolation: isolate;
+}
+
+/* ── Default pill "Hello world" (Figma: 145×40, white border) ── */
+.hero__badge-default {
+  width: 145px;
+  border: 1px solid var(--color-white);
+  background: transparent;
+}
+
+/* ── Hover pill "I'M MARC ODERMATT" (Figma: 218×40, blue fill) ── */
+.hero__badge-hover {
+  width: 218px;
+  border: 1px solid var(--color-white);
+  background: var(--color-highlight-2);
+  overflow: hidden;
+  opacity: 0;
 }
 
 /* ── Headlines ── */
