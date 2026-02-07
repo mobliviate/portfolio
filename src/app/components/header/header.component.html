@@ -11,16 +11,20 @@
       <a class="hero-header__link" href="#contact">Contact</a>
     </nav>
 
-    <div class="hero-header__language" aria-label="Toggle language">
-      <button class="hero-header__language-btn hero-header__language-btn--active" type="button">
-        EN
-      </button>
-      <span class="hero-header__toggle" aria-hidden="true">
+    <div class="hero-header__language" aria-label="Toggle language" (click)="toggleLang()">
+      <button
+        class="hero-header__language-btn"
+        [class.hero-header__language-btn--active]="lang === 'en'"
+        type="button"
+      >EN</button>
+      <span class="hero-header__toggle" [class.hero-header__toggle--right]="lang === 'de'" aria-hidden="true">
         <span class="hero-header__toggle-thumb"></span>
       </span>
-      <button class="hero-header__language-btn" type="button">
-        DE
-      </button>
+      <button
+        class="hero-header__language-btn"
+        [class.hero-header__language-btn--active]="lang === 'de'"
+        type="button"
+      >DE</button>
     </div>
   </div>
 </header>

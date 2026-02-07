@@ -9,5 +9,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  lang: 'en' | 'de' = 'en';
 
+  toggleLang(): void {
+    this.lang = this.lang === 'en' ? 'de' : 'en';
+  }
 }

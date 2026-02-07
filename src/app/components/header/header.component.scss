@@ -206,6 +206,11 @@
   transition: left 200ms ease;
 }
 
+/* Thumb slides to the right when DE is active */
+.hero-header__toggle--right .hero-header__toggle-thumb {
+  left: 16px;
+}
+
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .hero-header {
