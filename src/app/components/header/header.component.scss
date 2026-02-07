@@ -33,6 +33,12 @@
   gap: 12px;
   text-decoration: none;
   flex-shrink: 0;
+  color: var(--color-highlight-2);
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: var(--color-highlight-1);
+  }
 }
 
 .hero-header__logo-text {
@@ -41,12 +47,7 @@
   font-size: 36px;
   line-height: 1;
   letter-spacing: -0.06em;
-  color: var(--color-highlight-2);
-  transition: color 0.25s ease;
-
-  .hero-header__logo:hover & {
-    color: var(--color-highlight-1);
-  }
+  color: inherit;
 }
 
 /* ── Navigation ── */
