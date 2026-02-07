@@ -381,6 +381,7 @@
     position: relative;
     right: auto;
     top: auto;
+    left: auto;
     align-self: center;
     transform: rotate(6deg);
     margin-top: 32px;
@@ -398,13 +399,79 @@
   }
 }
 
+/* ── Mobile (≤ 500px) – Figma: 375 × 812 ── */
 @media (max-width: 500px) {
   .hero {
-    padding: 110px 20px 40px;
+    height: 812px;
+    min-height: unset;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .hero__cta {
+  .hero__layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    max-width: 343px;
     width: 100%;
-    justify-content: center;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+  }
+
+  /* Badge: keep left-aligned, reduce margin since gap handles spacing */
+  .hero__badge {
+    margin-bottom: 0;
+    align-self: flex-start;
+  }
+
+  /* Headlines: 64px fixed, both left-aligned, less gap */
+  .hero__headline {
+    margin: 0;
+    gap: 16px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .hero__headline-primary,
+  .hero__headline-secondary {
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    align-self: flex-start;
+  }
+
+  /* CTA: right-aligned */
+  .hero__cta {
+    align-self: flex-end;
+    width: auto;
+  }
+
+  /* Polaroid: in flow, centered */
+  .hero__polaroid {
+    position: relative;
+    left: auto;
+    top: auto;
+    right: auto;
+    width: 204px;
+    height: 244px;
+    transform: rotate(8deg);
+    align-self: center;
+    margin: 0;
+  }
+
+  /* Social icons: hidden on mobile */
+  .hero__socials {
+    display: none;
   }
 }

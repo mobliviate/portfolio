@@ -211,6 +211,30 @@
   left: 16px;
 }
 
+/* ── Hamburger menu (hidden on desktop, visible on mobile) ── */
+.hero-header__menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.hero-header__menu-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 1px;
+}
+
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .hero-header {
@@ -222,28 +246,28 @@
   }
 }
 
-@media (max-width: 720px) {
+/* ── Mobile (≤ 500px) – Figma: 375px ── */
+@media (max-width: 500px) {
   .hero-header {
-    height: auto;
-    padding: 16px 24px;
+    height: 64px;
+    padding: 16px;
   }
 
   .hero-header__inner {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    height: auto;
+    height: 32px;
+    gap: 32px;
   }
 
-  .hero-header__nav {
-    order: 1;
-    width: 100%;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 12px;
+  .hero-header__logo-text {
+    font-size: 28px;
   }
 
+  .hero-header__nav,
   .hero-header__language {
-    order: 2;
+    display: none;
+  }
+
+  .hero-header__menu {
+    display: flex;
   }
 }
