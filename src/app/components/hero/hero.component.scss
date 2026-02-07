@@ -222,8 +222,9 @@
   left: 613px;
   top: 6px;
   transform: rotate(8deg);
-  pointer-events: none;
+  pointer-events: auto;
   margin: 0;
+  cursor: pointer;
 }
 
 .hero__photo,
@@ -233,12 +234,19 @@
 }
 
 .hero__photo {
-  inset: 26px 24px 64px 28px;
-  border-radius: 10px;
-  background:
-    linear-gradient(180deg, rgba(var(--color-black-deep-rgb), 0.2) 0%, rgba(var(--color-black-deep-rgb), 0.7) 100%),
-    url('/assets/01_Background/Design Size Relation@3x/01_Hero.png') center 35% / cover no-repeat;
+  /* Figma: left 6.83%, right 6.83%, top 5.75%, bottom 22.21% */
+  position: absolute;
+  left: 6.83%;
+  right: 6.83%;
+  top: 5.75%;
+  bottom: 22.21%;
+  background: url('/assets/03_Stickers/profil.jpg') center / cover no-repeat;
   filter: grayscale(1) contrast(1.05);
+  transition: filter 0.4s ease;
+}
+
+.hero__polaroid:hover .hero__photo {
+  filter: grayscale(0) contrast(1);
 }
 
 .hero__frame {
@@ -249,14 +257,27 @@
 }
 
 .hero__caption {
-  bottom: 20px;
+  bottom: 11px;
   left: 50%;
-  transform: translateX(-50%) rotate(8deg);
+  transform: translateX(-50%);
   font-family: 'Kalam', cursive;
   font-weight: 700;
   font-size: 24px;
   line-height: 120%;
-  color: var(--color-black);
+  color: #000000;
+  white-space: nowrap;
+}
+
+.hero__caption-hover {
+  display: none;
+}
+
+.hero__polaroid:hover .hero__caption-default {
+  display: none;
+}
+
+.hero__polaroid:hover .hero__caption-hover {
+  display: inline;
 }
 
 /* ── Social media (Figma: left 72, bottom 110, 40×40, gap 8) ── */
