@@ -175,9 +175,27 @@
   font-weight: 700;
   font-size: clamp(64px, 8.9vw, 128px);
   line-height: 100%;
-  text-transform: uppercase;
   letter-spacing: -0.04em;
   align-self: flex-end;
+}
+
+/* ── Individual letter hover ── */
+/* Uppercase letters → lowercase + yellow on hover */
+/* Lowercase letters → uppercase + yellow on hover */
+.hero__letter {
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.hero__letter--upper:hover {
+  text-transform: lowercase;
+  color: var(--color-highlight-1);
+}
+
+.hero__letter--lower:hover {
+  text-transform: uppercase;
+  color: var(--color-highlight-1);
 }
 
 /* ── CTA "Get in Touch" (Figma: 154 × 40) ── */
