@@ -2,6 +2,23 @@
 
 :root {
   color-scheme: dark;
+
+  /* Base colors – Option 1 */
+  --color-white: #F8F9FA;
+  --color-black: #0E1013;
+  --color-black-deep: #0A0C0F;
+  --color-beige: #F8F7E5;
+
+  /* Highlight colors – Option 1 */
+  --color-highlight-1: #F7C518;
+  --color-highlight-2: #3355FF;
+  --color-highlight-3: #F87A55;
+
+  /* RGB components for rgba() usage */
+  --color-white-rgb: 248, 249, 250;
+  --color-black-rgb: 14, 16, 19;
+  --color-black-deep-rgb: 10, 12, 15;
+  --color-highlight-2-rgb: 51, 85, 255;
 }
 
 *,
@@ -13,8 +30,8 @@
 body {
   margin: 0;
   font-family: 'Bricolage Grotesque', sans-serif;
-  background-color: #0e1013;
-  color: #f8f9fa;
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 a {

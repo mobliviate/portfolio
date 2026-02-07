@@ -6,11 +6,11 @@
   position: relative;
   min-height: clamp(700px, 100vh, 900px);
   padding: 160px 72px 140px;
-  color: #f8f9fa;
+  color: var(--color-white);
   background:
-    linear-gradient(180deg, rgba(14, 16, 19, 0.92) 0%, rgba(14, 16, 19, 0.82) 40%, rgba(14, 16, 19, 0.92) 100%),
+    linear-gradient(180deg, rgba(var(--color-black-rgb), 0.92) 0%, rgba(var(--color-black-rgb), 0.82) 40%, rgba(var(--color-black-rgb), 0.92) 100%),
     url('/assets/01_Background/Design Size Relation@3x/01_Hero.png') center / cover no-repeat,
-    #0a0c0f;
+    var(--color-black-deep);
   overflow: hidden;
 }
 
@@ -47,8 +47,8 @@
   justify-content: center;
   padding: 10px 28px;
   border-radius: 999px;
-  border: 1px solid rgba(248, 249, 250, 0.8);
-  background: rgba(14, 16, 19, 0.3);
+  border: 1px solid rgba(var(--color-white-rgb), 0.8);
+  background: rgba(var(--color-black-rgb), 0.3);
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -79,19 +79,19 @@
   justify-content: center;
   padding: 12px 32px;
   border-radius: 999px;
-  border: 1px solid rgba(248, 249, 250, 0.85);
+  border: 1px solid rgba(var(--color-white-rgb), 0.85);
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
-  color: #f8f9fa;
-  background: rgba(14, 16, 19, 0.2);
+  color: var(--color-white);
+  background: rgba(var(--color-black-rgb), 0.2);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .hero__cta:hover,
 .hero__cta:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(14, 16, 19, 0.35);
+  box-shadow: 0 12px 28px rgba(var(--color-black-rgb), 0.35);
 }
 
 .hero__polaroid {
@@ -99,7 +99,7 @@
   width: clamp(180px, 22vw, 240px);
   aspect-ratio: 204 / 244;
   transform: rotate(8deg);
-  filter: drop-shadow(20px 28px 40px rgba(6, 7, 8, 0.45));
+  filter: drop-shadow(20px 28px 40px rgba(6, 7, 8, 0.45)); /* near-black shadow */
   pointer-events: none;
 }
 
@@ -113,7 +113,7 @@
   inset: 26px 24px 64px 28px;
   border-radius: 10px;
   background:
-    linear-gradient(180deg, rgba(10, 12, 15, 0.2) 0%, rgba(10, 12, 15, 0.7) 100%),
+    linear-gradient(180deg, rgba(var(--color-black-deep-rgb), 0.2) 0%, rgba(var(--color-black-deep-rgb), 0.7) 100%),
     url('/assets/01_Background/Design Size Relation@3x/01_Hero.png') center 35% / cover no-repeat;
   filter: grayscale(1) contrast(1.05);
 }
@@ -132,7 +132,7 @@
   font-family: 'Kalam', cursive;
   font-weight: 700;
   font-size: 24px;
-  color: #0e1013;
+  color: var(--color-black);
 }
 
 .hero__socials {
@@ -151,8 +151,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 2px solid rgba(248, 249, 250, 0.85);
-  background: rgba(14, 16, 19, 0.6);
+  border: 2px solid rgba(var(--color-white-rgb), 0.85);
+  background: rgba(var(--color-black-rgb), 0.6);
   transition: transform 180ms ease, box-shadow 180ms ease;
   pointer-events: auto;
 }
@@ -160,13 +160,13 @@
 .hero__social-link svg {
   width: 20px;
   height: 20px;
-  fill: #f8f9fa;
+  fill: var(--color-white);
 }
 
 .hero__social-link:hover,
 .hero__social-link:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(14, 16, 19, 0.45);
+  box-shadow: 0 8px 18px rgba(var(--color-black-rgb), 0.45);
 }
 
 @media (max-width: 1100px) {
