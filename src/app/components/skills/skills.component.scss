@@ -66,6 +66,14 @@
   height: 80px;
 }
 
+@keyframes circle-line-reveal {
+  0%   { clip-path: inset(0 0 98.75% 99.62%); }   /* Punkt oben-rechts */
+  20%  { clip-path: inset(0 0 0 0); }               /* voll sichtbar */
+  60%  { clip-path: inset(0 0 0 0); }               /* 3s sichtbar */
+  80%  { clip-path: inset(0 0 98.75% 99.62%); }    /* zurück zum Punkt */
+  100% { clip-path: inset(0 0 98.75% 99.62%); }    /* 2s Pause */
+}
+
 .skills__circle-line {
   position: absolute;
   width: 261px;
@@ -74,6 +82,7 @@
   top: 0;
   object-fit: contain;
   transform: scaleX(-1); /* Figma: matrix(-1, 0, 0, 1, 0, 0) */
+  animation: circle-line-reveal 5s ease-in-out infinite;
 }
 
 .skills__title {
