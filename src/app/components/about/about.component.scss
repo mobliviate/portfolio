@@ -135,11 +135,14 @@
   0% {
     clip-path: inset(0 100% 0 0);
   }
-  40% {
+  10% {
     clip-path: inset(0 0 0 0);
   }
-  60% {
+  70% {
     clip-path: inset(0 0 0 0);
+  }
+  80% {
+    clip-path: inset(0 100% 0 0);
   }
   100% {
     clip-path: inset(0 100% 0 0);
@@ -156,7 +159,7 @@
     height: 100%;
     object-fit: contain;
     object-position: left;
-    animation: blueline-reveal 3s ease-in-out infinite;
+    animation: blueline-reveal 5s ease-in-out infinite;
   }
 }
 
