@@ -1,1 +1,116 @@
-<p>skills works!</p>
+<section class="skills" id="skills">
+  <div class="skills__content">
+    <!-- Title + Description row -->
+    <div class="skills__title-text">
+      <!-- Left: Title area -->
+      <div class="skills__header">
+        <span class="skills__subtitle">MY STACK</span>
+        <div class="skills__title-wrap">
+          <img
+            class="skills__circle-line"
+            src="/assets/00_Hand-drawn lines/02_Skills/Color option 1.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <h2 class="skills__title">Skill set</h2>
+        </div>
+      </div>
+
+      <!-- Right: Description on ripped paper -->
+      <div class="skills__description">
+        <img
+          class="skills__description-bg"
+          src="/assets/02_Ripped Paper/1.Skills description.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <p class="skills__description-text">
+          A short introduction of your skills. Highlight your experience of
+          using different front-end technologies and emphasise your openness
+          to learning and adapting to new technologies.
+        </p>
+      </div>
+    </div>
+
+    <!-- Skills Logos Grid -->
+    <div class="skills__logos">
+      @for (skill of skills; track skill.name) {
+        <div class="skills__logo-item">
+          <div class="skills__logo-icon">
+            <img [src]="skill.icon" [alt]="skill.name" />
+          </div>
+          <span class="skills__logo-label">{{ skill.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Sticker – all 3 layers always in DOM, crossfaded via opacity -->
+  <div
+    class="skills__sticker"
+    [class.skills__sticker--transition]="stickerState === 'transition'"
+    [class.skills__sticker--final]="stickerState === 'final'"
+    (click)="peelSticker()"
+  >
+    <!-- Layer 1: Final (yellow, lowest) -->
+    <img
+      class="skills__sticker-layer skills__sticker-layer--final"
+      src="/assets/03_Stickers/01_Skills - Peel off/Final.png"
+      alt=""
+    />
+    <div class="skills__sticker-content">
+      <span class="skills__sticker-heading"
+        >Also, I'm interested in diving into:</span
+      >
+      <div class="skills__sticker-icons">
+        <div class="skills__sticker-icon-item">
+          <svg
+            viewBox="-11.5 -10.232 23 20.463"
+            width="40"
+            height="40"
+          >
+            <circle r="2.05" fill="#F8F9FA" />
+            <g stroke="#F8F9FA" fill="none" stroke-width="1">
+              <ellipse rx="11" ry="4.2" />
+              <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+              <ellipse rx="11" ry="4.2" transform="rotate(120)" />
+            </g>
+          </svg>
+          <span>React</span>
+        </div>
+        <div class="skills__sticker-icon-item">
+          <img
+            src="/assets/05_Skills/Vue.Js.png"
+            alt="Vue.js"
+            width="40"
+            height="40"
+          />
+          <span>Vue.js</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layer 2: Transition (mid-peel) -->
+    <img
+      class="skills__sticker-layer skills__sticker-layer--transition"
+      src="/assets/03_Stickers/01_Skills - Peel off/Transition.png"
+      alt=""
+    />
+
+    <!-- Layer 3: Default (blue, top) -->
+    <img
+      class="skills__sticker-layer skills__sticker-layer--default"
+      src="/assets/03_Stickers/01_Skills - Peel off/Default.png"
+      alt=""
+    />
+    <div class="skills__sticker-overlay">
+      <img
+        class="skills__sticker-arrow"
+        src="/assets/03_Stickers/Arrow.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <span class="skills__sticker-text">Pull to<br />peel</span>
+    </div>
+  </div>
+</section>

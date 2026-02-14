@@ -1,0 +1,431 @@
+:host {
+  display: block;
+  background: url('/assets/01_Background/Design Size Relation@3x/03_Skills.png') center / cover no-repeat;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Skills Section (Figma: 1440 × 800) ── */
+.skills {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 144px 120px;
+  max-width: 1440px;
+  min-height: 800px;
+  margin: 0 auto;
+}
+
+/* ── Content wrapper (Figma: 1200 × 458) ── */
+.skills__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 1200px;
+  isolation: isolate;
+}
+
+/* ── Title + Description row (Figma: 1200 × 144) ── */
+.skills__title-text {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+}
+
+/* ── Left: Header with subtitle + title (Figma: 261 × 108) ── */
+.skills__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  width: 261px;
+  flex-shrink: 0;
+}
+
+.skills__subtitle {
+  width: 100%;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: right;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+/* ── Title wrap with circle line (Figma: 261 × 80) ── */
+.skills__title-wrap {
+  position: relative;
+  width: 261px;
+  height: 80px;
+}
+
+.skills__circle-line {
+  position: absolute;
+  width: 261px;
+  height: 80px;
+  left: 0;
+  top: 0;
+  object-fit: contain;
+  transform: scaleX(-1); /* Figma: matrix(-1, 0, 0, 1, 0, 0) */
+}
+
+.skills__title {
+  position: absolute;
+  margin: 0;
+  left: 8px;
+  top: 8px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 100%;
+  color: var(--color-white);
+}
+
+/* ── Right: Description on ripped paper (Figma: 656 × 144) ── */
+.skills__description {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  width: 656px;
+  height: 144px;
+  flex-shrink: 0;
+}
+
+.skills__description-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.skills__description-text {
+  position: relative;
+  margin: 0;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--color-white);
+  mix-blend-mode: exclusion;
+  z-index: 1;
+}
+
+/* ── Skills Logos Grid (Figma: 640 × 266) ── */
+.skills__logos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  gap: 24px 40px;
+  width: 640px;
+}
+
+/* ── Individual Skill Item (Figma: 96 × 98+) ── */
+.skills__logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 96px;
+  cursor: pointer;
+}
+
+.skills__logo-icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(1.5);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+}
+
+.skills__logo-item:hover .skills__logo-icon img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(0.78);
+}
+
+.skills__logo-label {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  text-align: center;
+  color: var(--color-white);
+  width: 96px;
+}
+
+/* ═══════════════════════════════════════════
+   STICKER – Pull to Peel
+   ═══════════════════════════════════════════ */
+
+.skills__sticker {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  right: 110px;
+  bottom: 200px;
+  transform: rotate(8deg);
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+/* ── Sticker layers – stacked, crossfaded via opacity ── */
+.skills__sticker-layer {
+  position: absolute;
+  inset: 0;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  transition: opacity 0.35s ease;
+
+  &--final {
+    opacity: 1; /* always visible as base */
+    z-index: 0;
+  }
+
+  &--transition {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &--default {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+/* ── Default state overlay (arrow + text) ── */
+.skills__sticker-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 167px;
+  height: 128px;
+  left: calc(50% - 167px / 2 + 4.43px);
+  top: calc(50% - 128px / 2 + 1.38px);
+  opacity: 0.9;
+  z-index: 3;
+  transition: opacity 0.25s ease;
+}
+
+.skills__sticker-arrow {
+  width: 51px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.skills__sticker-text {
+  font-family: 'Kalam', cursive;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: var(--color-white);
+}
+
+/* ── Final content overlay (React/Vue) ── */
+.skills__sticker-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 0;
+  width: 167px;
+  height: 118px;
+  left: calc(50% - 167px / 2);
+  top: calc(50% - 118px / 2);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.15s;
+}
+
+/* ── Transition state: blue fades, mid-peel shows ── */
+.skills__sticker--transition {
+  .skills__sticker-layer--default {
+    opacity: 0;
+  }
+
+  .skills__sticker-layer--transition {
+    opacity: 1;
+  }
+
+  .skills__sticker-overlay {
+    opacity: 0;
+  }
+}
+
+/* ── Final state: everything peeled, yellow + content visible ── */
+.skills__sticker--final {
+  transform: rotate(0deg);
+
+  .skills__sticker-layer--default {
+    opacity: 0;
+  }
+
+  .skills__sticker-layer--transition {
+    opacity: 0;
+  }
+
+  .skills__sticker-overlay {
+    opacity: 0;
+  }
+
+  .skills__sticker-content {
+    opacity: 1;
+  }
+}
+
+.skills__sticker-heading {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: var(--color-white);
+  width: 167px;
+}
+
+.skills__sticker-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.skills__sticker-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  span {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 108%;
+    text-align: center;
+    color: var(--color-white);
+  }
+}
+
+/* ── Mobile (≤ 500px) ── */
+@media (max-width: 500px) {
+  .skills {
+    padding: 88px 16px;
+    min-height: auto;
+  }
+
+  .skills__content {
+    width: 100%;
+    gap: 32px;
+  }
+
+  .skills__title-text {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .skills__header {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .skills__subtitle {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .skills__title {
+    font-size: 48px;
+  }
+
+  .skills__title-wrap {
+    width: 200px;
+    height: 62px;
+  }
+
+  .skills__circle-line {
+    width: 200px;
+    height: 62px;
+  }
+
+  .skills__description {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+  }
+
+  .skills__description-text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .skills__logos {
+    width: 100%;
+    gap: 16px 24px;
+  }
+
+  .skills__logo-icon img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .skills__logo-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .skills__logo-label {
+    font-size: 14px;
+  }
+
+  .skills__logo-item {
+    width: 80px;
+  }
+
+  .skills__sticker {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 24px auto 0;
+  }
+}
