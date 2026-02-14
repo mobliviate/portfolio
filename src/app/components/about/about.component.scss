@@ -54,7 +54,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   pointer-events: none;
 }
 
@@ -206,5 +206,73 @@
     box-shadow: none;
     transform: translate(2px, 4px);
     color: var(--color-white);
+  }
+}
+
+/* ── Mobile (≤ 500px) – Figma: 375 × 975 ── */
+@media (max-width: 500px) {
+  .about {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 88px 16px;
+    gap: 40px;
+    min-height: auto;
+  }
+
+  /* Content comes first on mobile */
+  .about__content {
+    order: 0;
+    width: 100%;
+    gap: 32px;
+  }
+
+  .about__location {
+    order: 1;
+    width: 100%;
+  }
+
+  /* Smaller subtitle */
+  .about__subtitle {
+    font-size: 18px;
+  }
+
+  /* Smaller title */
+  .about__title {
+    font-size: 48px;
+  }
+
+  /* Narrower blue line */
+  .about__blueline {
+    width: 227px;
+  }
+
+  /* Smaller body text */
+  .about__text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  /* Smaller button font */
+  .about__cta {
+    font-size: 18px;
+  }
+
+  /* Mobile cards: 343 × 128, different overlap */
+  .about__card {
+    width: 100%;
+    height: 128px;
+
+    &--blue {
+      margin-top: -40px;
+    }
+
+    &--orange {
+      margin-top: -40px;
+    }
+  }
+
+  /* Card label stays 20px on mobile */
+  .about__card-label {
+    font-size: 20px;
   }
 }
