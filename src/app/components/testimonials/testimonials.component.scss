@@ -69,18 +69,26 @@
 
 /* ── Card Stack ── */
 .voices__stack {
+  width: 100%;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 360px;
   position: relative;
+
+  .voices__card {
+    position: relative;
+
+    &:not(:first-child) {
+      margin-left: -130px;
+    }
+  }
 }
 
 .voices__card {
-  position: relative;
-  width: 360px;
-  min-height: 320px;
-  padding: 40px 32px;
+  width: 480px;
+  height: 318px;
+  padding: 48px 40px;
   border-radius: 4px;
   background-size: contain;
   background-position: center;
@@ -88,15 +96,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: z-index 0s, transform 0.3s ease;
-
-  &:not(:first-child) {
-    margin-left: -100px;
-  }
+  position: relative;
 
   &:hover {
     z-index: 50 !important;
-    transform: rotate(0deg) scale(1.04) !important;
+
+    .voices__hover-bg {
+      opacity: 0.7;
+    }
+
+    .voices__reviewer {
+      color: var(--color-white);
+    }
   }
 }
 
@@ -115,80 +126,112 @@
   background-image: url('/assets/03_Stickers/02_Testimonials/Color option 1/A.png');
 }
 
+.voices__hover-bg {
+  position: absolute;
+  inset: 0;
+  width: 480px;
+  height: 318px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
 .voices__quote {
-  margin: 0;
+  z-index: 3;
+  text-align: justify;
   font-size: 18px;
-  line-height: 28px;
-  font-style: italic;
-  color: var(--color-white);
+  font-weight: 400;
+  margin: 0;
+  color: var(--color-black);
 }
 
 .voices__author-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 24px;
-}
-
-.voices__author-info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.voices__author-name {
   font-size: 18px;
-  font-weight: 700;
-  color: var(--color-white);
+  z-index: 3;
 }
 
-.voices__author-role {
-  font-size: 14px;
-  color: rgba(var(--color-white-rgb), 0.7);
+.voices__reviewer {
+  transition: color 0.3s ease;
+
+  .voices__author-name {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .voices__author-role {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
 }
 
 .voices__linkedin {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  transition: opacity 0.2s;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-black);
+  transition: color 0.3s ease;
 
-  img {
+  svg {
     width: 24px;
     height: 24px;
-    object-fit: contain;
+  }
+
+  p {
+    margin: 0;
   }
 
   &:hover {
-    opacity: 0.7;
+    color: var(--color-white);
+
+    svg path {
+      fill: var(--color-white);
+    }
   }
 }
 
 /* ── Responsive ── */
-@media (max-width: 1100px) {
-  .voices__stack {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    min-height: auto;
+@media (max-width: 1300px) {
+  .voices__card {
+    width: 480px * 0.85;
+    height: 318px * 0.85;
+    padding: 25px 35px;
   }
 
-  .voices__card {
-    margin-left: 0 !important;
-    position: relative !important;
+  .voices__hover-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
   }
 }
 
-@media (max-width: 500px) {
-  .voices {
-    padding: 80px 16px;
-  }
+@media (max-width: 1100px) {
+  .voices__stack {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
 
+    .voices__card {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 525px) {
   .voices__title {
-    font-size: 48px;
+    font-size: 45px;
   }
 
   .voices__label {
@@ -196,13 +239,15 @@
   }
 
   .voices__card {
-    width: 300px;
-    min-height: 300px;
-    padding: 32px 24px;
+    width: 320px;
+    height: 353px;
+    padding: 40px 28px;
+    background-size: 100% 100%;
   }
 
-  .voices__quote {
-    font-size: 16px;
-    line-height: 24px;
+  .voices__hover-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
   }
 }

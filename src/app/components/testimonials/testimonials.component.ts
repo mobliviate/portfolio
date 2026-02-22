@@ -20,8 +20,8 @@ export class TestimonialsComponent {
   locale = inject(LocaleService);
 
   labels: Record<string, Record<string, string>> = {
-    subtitle: { en: 'WHAT OTHERS SAY', de: 'WAS ANDERE SAGEN' },
-    title: { en: 'Testimonials', de: 'Referenzen' },
+    subtitle: { en: 'IN THEIR WORDS', de: 'IN IHREN WORTEN' },
+    title: { en: "Colleagues' Thoughts", de: 'Feedback von Kollegen' },
   };
 
   reviews: Review[] = [
