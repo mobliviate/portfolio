@@ -12,28 +12,27 @@
 
   <div class="showcase__grid">
     @for (project of projects; track project.id) {
-      <article class="showcase__card" [style.--card-accent]="project.accent">
+      <article class="showcase__card" [id]="project.id" [style.--card-accent]="project.accent">
         <div class="showcase__card-visual">
           <div class="showcase__card-placeholder">
             <span>{{ project.title }}</span>
           </div>
           <div class="showcase__card-hover">
-            @if (project.liveUrl) {
-              <a class="showcase__card-btn" [href]="project.liveUrl" target="_blank" rel="noopener">{{ t('live') }}</a>
-            }
-            @if (project.repoUrl) {
-              <a class="showcase__card-btn" [href]="project.repoUrl" target="_blank" rel="noopener">{{ t('code') }}</a>
-            }
+            <a class="showcase__card-btn" [routerLink]="['/projects', project.id]">{{ t('details') }}</a>
           </div>
         </div>
         <div class="showcase__card-info">
           <h3 class="showcase__card-title">{{ project.title }}</h3>
           <p class="showcase__card-desc">{{ project.description[locale.current] }}</p>
           <div class="showcase__card-tags">
-            @for (tech of project.tech; track tech) {
-              <span class="showcase__card-tag">{{ tech }}</span>
+            @for (skill of project.skills; track skill.name) {
+              <span class="showcase__card-tag">{{ skill.name }}</span>
             }
           </div>
+        </div>
+
+        <div class="showcase__card-touch">
+          <a class="showcase__card-btn showcase__card-btn--dark" [routerLink]="['/projects', project.id]">{{ t('details') }}</a>
         </div>
       </article>
     }

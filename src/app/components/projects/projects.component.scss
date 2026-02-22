@@ -189,6 +189,28 @@
   color: rgba(var(--color-white-rgb), 0.7);
 }
 
+/* ── Touch fallback button (below card) ── */
+.showcase__card-touch {
+  display: none;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+.showcase__card-btn--dark {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+@media (pointer: coarse) {
+  .showcase__card-touch {
+    display: flex;
+  }
+
+  .showcase__card-hover {
+    display: none;
+  }
+}
+
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .showcase__grid {
