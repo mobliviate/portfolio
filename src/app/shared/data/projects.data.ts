@@ -59,25 +59,4 @@ export const PROJECTS: ProjectDetail[] = [
     liveUrl: '#',
     accent: 'var(--color-highlight-3)',
   },
-  {
-    id: 'portfolio',
-    title: 'Portfolio',
-    description: {
-      en: 'This very site! A responsive portfolio built with Angular, featuring smooth scroll animations, a reactive contact form, and a dark theme with hand-drawn visual elements.',
-      de: 'Genau diese Seite! Ein responsives Portfolio mit Angular, fliessenden Scroll-Animationen, einem reaktiven Kontaktformular und einem dunklen Theme mit handgezeichneten visuellen Elementen.',
-    },
-    process: {
-      en: 'I designed the component architecture first, then built each section as a standalone component. Animations were implemented with IntersectionObserver and CSS keyframes. The contact form uses Angular Reactive Forms.',
-      de: 'Ich entwarf zuerst die Komponentenarchitektur und baute dann jede Sektion als Standalone-Komponente. Animationen wurden mit IntersectionObserver und CSS Keyframes implementiert. Das Kontaktformular nutzt Angular Reactive Forms.',
-    },
-    duration: { en: '3 weeks', de: '3 Wochen' },
-    skills: [
-      { name: 'Angular', icon: '/assets/icons/skills/frontend/Angular.svg' },
-      { name: 'TypeScript', icon: '/assets/icons/skills/frontend/Ts.svg' },
-      { name: 'SCSS', icon: '/assets/icons/skills/frontend/CSS.svg' },
-    ],
-    githubUrl: '#',
-    liveUrl: '',
-    accent: 'var(--color-highlight-1)',
-  },
 ];
