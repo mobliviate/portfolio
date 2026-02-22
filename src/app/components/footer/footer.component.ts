@@ -16,7 +16,7 @@ export class FooterComponent {
   private scroller = inject(ViewportScroller);
 
   labels: Record<string, Record<string, string>> = {
-    imprint: { en: 'Imprint', de: 'Impressum' },
+    imprint: { en: 'Legal Notice', de: 'Impressum' },
     privacy: { en: 'Privacy Policy', de: 'Datenschutz' },
   };
 

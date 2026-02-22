@@ -54,6 +54,16 @@ a {
   color: var(--color-highlight-2);
 }
 
+ul {
+  margin: 0;
+  padding-left: 24px;
+  font-size: 20px;
+
+  li {
+    margin-bottom: 8px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .title-bg {
     height: 400px;
@@ -79,7 +89,7 @@ a {
     font-size: 24px;
   }
 
-  p {
+  p, ul {
     font-size: 18px;
   }
 
@@ -97,7 +107,7 @@ a {
     font-size: 20px;
   }
 
-  p {
+  p, ul {
     font-size: 16px;
   }
 }

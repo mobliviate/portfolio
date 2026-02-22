@@ -10,26 +10,63 @@ import { LocaleService } from '../../../shared/services/locale.service';
 export class PrivacyComponent {
   locale = inject(LocaleService);
 
-  content: Record<string, { title: string; text: string }[]> = {
-    en: [
-      { title: 'Responsible Party', text: 'Marc Odermatt, Emmetten, Switzerland. Email: info@marcodermatt.ch' },
-      { title: 'Data Collection', text: 'When you visit this website, your browser automatically transmits certain data (IP address, date/time, page visited). This data is used solely for providing the website and is not stored permanently.' },
-      { title: 'Contact Form', text: 'If you send a message via the contact form, the data you provide (name, email, message) will be used exclusively for processing your inquiry. Your data will not be shared with third parties.' },
-      { title: 'Hosting', text: 'This website is hosted externally. The hosting provider may collect server log files containing your IP address, browser type, and access times. This is necessary for the operation of the website.' },
-      { title: 'Your Rights', text: 'You have the right to request information about your stored personal data, as well as the right to correction, deletion, or restriction of processing. Contact us at info@marcodermatt.ch for any privacy-related requests.' },
-    ],
-    de: [
-      { title: 'Verantwortliche Stelle', text: 'Marc Odermatt, Emmetten, Schweiz. E-Mail: info@marcodermatt.ch' },
-      { title: 'Datenerfassung', text: 'Beim Besuch dieser Website überträgt Ihr Browser automatisch bestimmte Daten (IP-Adresse, Datum/Uhrzeit, besuchte Seite). Diese Daten dienen ausschliesslich der Bereitstellung der Website und werden nicht dauerhaft gespeichert.' },
-      { title: 'Kontaktformular', text: 'Wenn Sie eine Nachricht über das Kontaktformular senden, werden die von Ihnen angegebenen Daten (Name, E-Mail, Nachricht) ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet. Ihre Daten werden nicht an Dritte weitergegeben.' },
-      { title: 'Hosting', text: 'Diese Website wird extern gehostet. Der Hosting-Anbieter kann Server-Logdateien erfassen, die Ihre IP-Adresse, den Browsertyp und die Zugriffszeiten enthalten. Dies ist für den Betrieb der Website erforderlich.' },
-      { title: 'Ihre Rechte', text: 'Sie haben das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten sowie das Recht auf Berichtigung, Löschung oder Einschränkung der Verarbeitung. Kontaktieren Sie uns unter info@marcodermatt.ch für datenschutzbezogene Anfragen.' },
-    ],
+  labels: Record<string, Record<string, string>> = {
+    pageTitle: { en: 'Privacy Policy', de: 'Datenschutzerklärung' },
+
+    s1Title: { en: '1. Responsible Party', de: '1. Verantwortliche Stelle' },
+    s1Intro: {
+      en: 'Responsible for data processing on this website:',
+      de: 'Verantwortlich für die Datenbearbeitung auf dieser Website:',
+    },
+
+    s2Title: { en: '2. Principle', de: '2. Grundsatz' },
+    s2Text: {
+      en: 'The protection of your personal data is an important concern for us. This website does not collect, store, or process any personal data. No user tracking, analytics, cookies, or server log files are used. The website is purely informational and operates without any form of data collection.',
+      de: 'Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen. Diese Website erhebt, speichert oder verarbeitet keinerlei personenbezogene Daten. Es werden kein User-Tracking, keine Analysetools, keine Cookies und keine Server-Logfiles eingesetzt. Die Website dient rein informativen Zwecken und funktioniert ohne jegliche Form der Datenerhebung.',
+    },
+
+    s3Title: { en: '3. Cookies', de: '3. Cookies' },
+    s3Text: {
+      en: 'This website does not use cookies of any kind — neither technically necessary, nor tracking, marketing, or third-party cookies.',
+      de: 'Diese Website verwendet keinerlei Cookies — weder technisch notwendige noch Tracking-, Marketing- oder Drittanbieter-Cookies.',
+    },
+
+    s4Title: { en: '4. Disclosure to Third Parties', de: '4. Weitergabe an Dritte' },
+    s4Text: {
+      en: 'Since no personal data is collected, no data is disclosed to third parties, sold, or otherwise transferred.',
+      de: 'Da keine personenbezogenen Daten erhoben werden, erfolgt auch keine Weitergabe an Dritte, kein Verkauf und keine anderweitige Übermittlung.',
+    },
+
+    s5Title: { en: '5. Hosting', de: '5. Hosting' },
+    s5Text: {
+      en: 'This website is hosted as a static site. No server-side processing of personal data takes place.',
+      de: 'Diese Website wird als statische Seite gehostet. Es findet keine serverseitige Verarbeitung personenbezogener Daten statt.',
+    },
+
+    s6Title: { en: '6. Rights of Data Subjects', de: '6. Rechte der betroffenen Personen' },
+    s6Intro: {
+      en: 'Even though no personal data is collected on this website, you have the following rights under the Federal Act on Data Protection (nDSG):',
+      de: 'Auch wenn auf dieser Website keine personenbezogenen Daten erhoben werden, stehen Ihnen gemäss dem Bundesgesetz über den Datenschutz (nDSG) folgende Rechte zu:',
+    },
+    s6Rights: {
+      en: 'Right to information (Art. 25 nDSG)|Right to rectification (Art. 32 nDSG)|Right to deletion (Art. 32 nDSG)|Right to data portability|Right to lodge a complaint with the Federal Data Protection and Information Commissioner (FDPIC): www.edoeb.admin.ch',
+      de: 'Auskunftsrecht (Art. 25 nDSG)|Recht auf Berichtigung (Art. 32 nDSG)|Recht auf Löschung (Art. 32 nDSG)|Recht auf Datenübertragbarkeit|Beschwerderecht beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB): www.edoeb.admin.ch',
+    },
+
+    s7Title: { en: '7. Contact', de: '7. Kontakt' },
+    s7Text: {
+      en: 'For questions about data protection or to exercise your rights, please contact:',
+      de: 'Für Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte wenden Sie sich bitte an:',
+    },
+
+    lastUpdated: { en: 'Last updated: February 2026', de: 'Stand: Februar 2026' },
   };
 
-  get sections(): { title: string; text: string }[] {
-    return this.content[this.locale.current] ?? this.content['en'];
+  t(key: string): string {
+    return this.labels[key]?.[this.locale.current] ?? '';
   }
 
-  pageTitle: Record<string, string> = { en: 'Privacy Policy', de: 'Datenschutzerklärung' };
+  getItems(key: string): string[] {
+    return (this.labels[key]?.[this.locale.current] ?? '').split('|');
+  }
 }
