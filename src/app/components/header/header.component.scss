@@ -5,7 +5,6 @@
   z-index: 1000;
 }
 
-/* ── Header Bar ── */
 .hero-header {
   width: 100%;
   height: 80px;
@@ -26,7 +25,6 @@
   gap: 32px;
 }
 
-/* ── Logo ── */
 .hero-header__logo {
   display: inline-flex;
   align-items: center;
@@ -50,7 +48,6 @@
   color: inherit;
 }
 
-/* ── Navigation ── */
 .hero-header__nav {
   display: flex;
   align-items: center;
@@ -119,7 +116,6 @@
   background-position: center bottom;
 }
 
-/* ── Language Toggle ── */
 .hero-header__language {
   display: inline-flex;
   align-items: center;
@@ -190,7 +186,6 @@
   left: 16px;
 }
 
-/* ── Hamburger ── */
 .hero-header__menu {
   display: none;
   align-items: center;
@@ -216,7 +211,6 @@
   }
 }
 
-/* ── Mobile Menu Overlay ── */
 .hero-header__overlay {
   position: fixed;
   inset: 0;
@@ -231,7 +225,6 @@
   }
 }
 
-/* ── Responsive ── */
 @media (max-width: 960px) {
   .hero-header {
     padding: 19px 40px;

@@ -3,7 +3,6 @@
   background: var(--color-white);
 }
 
-/* ── About Section (Figma: 1440 × 720) ── */
 .about {
   display: flex;
   flex-direction: row;
@@ -16,7 +15,6 @@
   color: var(--color-black);
 }
 
-/* ── Left column: Location cards (Figma: 560 × 400) ── */
 .about__location {
   display: flex;
   flex-direction: column;
@@ -25,7 +23,6 @@
   flex-shrink: 0;
 }
 
-/* ── Ripped paper card (Figma: 560 × 152) ── */
 .about__card {
   position: relative;
   width: 560px;
@@ -84,7 +81,6 @@
   color: var(--color-white);
 }
 
-/* ── Right column: Content (Figma: 560 × 432) ── */
 .about__content {
   display: flex;
   flex-direction: column;
@@ -94,7 +90,6 @@
   flex-shrink: 0;
 }
 
-/* ── Header with subtitle, title & blue line ── */
 .about__header {
   display: flex;
   flex-direction: column;
@@ -128,9 +123,6 @@
   color: var(--color-black);
 }
 
-/* ── Blue line animation ── */
-/* Figma: Default right:99.67% → Transition right:0% */
-/* Reveals left→right, hides right→left, loops */
 @keyframes blueline-reveal {
   0% {
     clip-path: inset(0 100% 0 0);
@@ -163,7 +155,6 @@
   }
 }
 
-/* ── Description text (Figma: 560 × 168, 20px/24px) ── */
 .about__text {
   margin: 0;
   font-family: 'Bricolage Grotesque', sans-serif;
@@ -174,8 +165,6 @@
   width: 100%;
 }
 
-/* ── CTA Button "Let's talk" (Figma: 132 × 40) ── */
-/* Same behaviour as hero "Get in Touch" but with dark border on white bg */
 .about__cta {
   display: inline-flex;
   align-items: center;
@@ -209,7 +198,6 @@
   }
 }
 
-/* ── Tablet (≤ 1200px) ── */
 @media (max-width: 1200px) {
   .about {
     flex-direction: column-reverse;
@@ -230,14 +218,12 @@
   }
 }
 
-/* ── Small Tablet (≤ 768px) ── */
 @media (max-width: 768px) {
   .about {
     padding: 88px 28px;
   }
 }
 
-/* ── Mobile (≤ 500px) – Figma: 375 × 975 ── */
 @media (max-width: 500px) {
   .about {
     flex-direction: column;
@@ -247,7 +233,6 @@
     min-height: auto;
   }
 
-  /* Content comes first on mobile */
   .about__content {
     order: 0;
     width: 100%;
@@ -259,33 +244,27 @@
     width: 100%;
   }
 
-  /* Smaller subtitle */
   .about__subtitle {
     font-size: 18px;
   }
 
-  /* Smaller title */
   .about__title {
     font-size: 48px;
   }
 
-  /* Narrower blue line */
   .about__blueline {
     width: 227px;
   }
 
-  /* Smaller body text */
   .about__text {
     font-size: 18px;
     line-height: 22px;
   }
 
-  /* Smaller button font */
   .about__cta {
     font-size: 18px;
   }
 
-  /* Mobile cards: 343 × 128, different overlap */
   .about__card {
     width: 100%;
     height: 128px;
@@ -299,7 +278,6 @@
     }
   }
 
-  /* Card label stays 20px on mobile */
   .about__card-label {
     font-size: 20px;
   }

@@ -1,5 +1,3 @@
-/* ── Icon-roll animation mixins ── */
-
 @mixin icon-image() {
   content: "";
   position: absolute;
@@ -33,14 +31,10 @@
   100% { transform: translateX(0) rotate(180deg); opacity: 0; }
 }
 
-/* ── Draw-line animation ── */
-
 @keyframes drawLeftToRight {
   from { clip-path: inset(0 100% 0 0); }
   to   { clip-path: inset(0 0 0 0); }
 }
-
-/* ── Footer layout ── */
 
 .site-footer {
   width: 100%;
@@ -83,8 +77,6 @@
   font-weight: 700;
 }
 
-/* ── Footer links row ── */
-
 .site-footer__links {
   display: flex;
   justify-content: space-between;
@@ -99,8 +91,6 @@
     cursor: pointer;
   }
 }
-
-/* ── Legal links (yellow underline on hover) ── */
 
 .link-container {
   position: relative;
@@ -150,8 +140,6 @@
   }
 }
 
-/* ── Social links (icon-roll + blue pill on hover) ── */
-
 .link-social {
   position: relative;
   height: 40px;
@@ -199,8 +187,6 @@
   background-image: url('/assets/icons/socials/email.svg');
   filter: var(--footer-img-filter, invert(0));
 }
-
-/* ── Responsive ── */
 
 @media (max-width: 1024px) {
   .site-footer__brand {

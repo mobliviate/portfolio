@@ -10,7 +10,6 @@
   padding: 100px clamp(16px, 5vw, 120px);
 }
 
-/* ── 2-column grid ── */
 .showcase__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -18,7 +17,6 @@
   grid-row-gap: 10px;
 }
 
-/* ── Headline cell ── */
 .showcase__headline {
   display: flex;
   flex-direction: column;
@@ -81,7 +79,6 @@
   text-align: justify;
 }
 
-/* ── Project card ── */
 .showcase__card {
   width: 100%;
   max-width: 560px;
@@ -174,7 +171,6 @@
   }
 }
 
-/* ── Sticker ── */
 .showcase__sticker {
   position: absolute;
   z-index: 10;
@@ -182,7 +178,6 @@
   bottom: 10%;
 }
 
-/* ── Text below image ── */
 .showcase__card-text {
   padding-top: 8px;
 }
@@ -200,7 +195,6 @@
   text-align: justify;
 }
 
-/* ── Touch fallback ── */
 .showcase__card-touch {
   display: none;
   justify-content: flex-end;
@@ -217,7 +211,6 @@
   }
 }
 
-/* ── Responsive ── */
 @media (max-width: 1250px) {
   .showcase__grid {
     grid-template-columns: 1fr;

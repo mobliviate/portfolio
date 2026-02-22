@@ -23,7 +23,6 @@
   position: relative;
 }
 
-/* ── Back link ── */
 .arrow-back-container {
   a {
     text-decoration: none;
@@ -49,7 +48,6 @@
   }
 }
 
-/* ── Body (two columns) ── */
 .proj-detail__body {
   display: flex;
   justify-content: space-between;
@@ -129,7 +127,6 @@
   }
 }
 
-/* ── Skills row ── */
 .proj-detail__skills {
   display: flex;
   gap: 12px;
@@ -153,7 +150,6 @@
   }
 }
 
-/* ── Project image + sticker ── */
 .proj-detail__visual {
   position: relative;
   padding-top: 25px;
@@ -170,7 +166,6 @@
   transform: translate(50%, -50%);
 }
 
-/* ── Actions (bottom) ── */
 .proj-detail__actions {
   position: absolute;
   bottom: 2%;
@@ -233,7 +228,6 @@
   mix-blend-mode: difference !important;
 }
 
-/* ── Responsive ── */
 @media (max-height: 950px) and (min-width: 1351px) {
   .proj-detail__container {
     padding-top: 55px;

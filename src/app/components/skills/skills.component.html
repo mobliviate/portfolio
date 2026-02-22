@@ -1,8 +1,6 @@
 <section class="skills" id="skills">
   <div class="skills__content">
-    <!-- Title + Description row -->
     <div class="skills__title-text">
-      <!-- Left: Title area -->
       <div class="skills__header">
         <span class="skills__subtitle">{{ t('subtitle') }}</span>
         <div class="skills__title-wrap">
@@ -16,7 +14,6 @@
         </div>
       </div>
 
-      <!-- Right: Description on ripped paper -->
       <div class="skills__description">
         <img
           class="skills__description-bg"
@@ -28,7 +25,6 @@
       </div>
     </div>
 
-    <!-- Skills Logos Grid -->
     <div class="skills__logos">
       @for (skill of skills; track skill.name) {
         <div class="skills__logo-item">
@@ -41,14 +37,12 @@
     </div>
   </div>
 
-  <!-- Sticker – all 3 layers always in DOM, crossfaded via opacity -->
   <div
     class="skills__sticker"
     [class.skills__sticker--transition]="stickerState === 'transition'"
     [class.skills__sticker--final]="stickerState === 'final'"
     (click)="peelSticker()"
   >
-    <!-- Layer 1: Final (yellow, lowest) -->
     <img
       class="skills__sticker-layer skills__sticker-layer--final"
       src="/assets/03_Stickers/01_Skills - Peel off/Final.png"
@@ -84,14 +78,12 @@
       </div>
     </div>
 
-    <!-- Layer 2: Transition (mid-peel) -->
     <img
       class="skills__sticker-layer skills__sticker-layer--transition"
       src="/assets/03_Stickers/01_Skills - Peel off/Transition.png"
       alt=""
     />
 
-    <!-- Layer 3: Default (blue, top) -->
     <img
       class="skills__sticker-layer skills__sticker-layer--default"
       src="/assets/03_Stickers/01_Skills - Peel off/Default.png"
