@@ -354,16 +354,71 @@
   }
 }
 
-/* ── Mobile (≤ 500px) ── */
-@media (max-width: 500px) {
+/* ── Tablet (≤ 1100px) ── */
+@media (max-width: 1100px) {
+  .skills__content {
+    width: 100%;
+  }
+
+  .skills__title-text {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .skills__header {
+    width: auto;
+    flex-shrink: 1;
+  }
+
+  .skills__description {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+    flex-shrink: 1;
+  }
+
+  .skills__logos {
+    width: 100%;
+  }
+
+  .skills__sticker {
+    right: 40px;
+    bottom: 160px;
+  }
+}
+
+/* ── Small tablet / large phone (≤ 768px) ── */
+@media (max-width: 768px) {
   .skills {
-    padding: 88px 16px;
-    min-height: auto;
+    padding: 88px clamp(16px, 5vw, 40px) 160px;
+  }
+
+  .skills__content {
+    width: 100%;
+    gap: 40px;
+  }
+
+  .skills__logos {
+    width: 100%;
+  }
+
+  .skills__sticker {
+    right: 20px;
+    bottom: 140px;
+  }
+}
+
+/* ── Mobile (≤ 550px) ── */
+@media (max-width: 550px) {
+  .skills {
+    padding: 88px 16px 120px;
+    flex-direction: column;
   }
 
   .skills__content {
     width: 100%;
     gap: 32px;
+    align-items: center;
   }
 
   .skills__title-text {
@@ -373,11 +428,11 @@
 
   .skills__header {
     width: 100%;
-    align-items: flex-start;
+    align-items: flex-end;
   }
 
   .skills__subtitle {
-    text-align: left;
+    text-align: right;
     font-size: 18px;
   }
 
@@ -398,7 +453,7 @@
   .skills__description {
     width: 100%;
     height: auto;
-    min-height: 120px;
+    min-height: 140px;
   }
 
   .skills__description-text {
@@ -408,17 +463,17 @@
 
   .skills__logos {
     width: 100%;
-    gap: 16px 24px;
-  }
-
-  .skills__logo-icon img {
-    width: 56px;
-    height: 56px;
+    gap: 24px 16px;
   }
 
   .skills__logo-icon {
     width: 56px;
     height: 56px;
+
+    img {
+      width: 56px;
+      height: 56px;
+    }
   }
 
   .skills__logo-label {
@@ -433,6 +488,45 @@
     position: relative;
     right: auto;
     bottom: auto;
-    margin: 24px auto 0;
+    margin: 8px auto 0;
+  }
+}
+
+/* ── Extra small (≤ 390px) ── */
+@media (max-width: 390px) {
+  .skills__title {
+    font-size: 40px;
+  }
+
+  .skills__title-wrap {
+    width: 175px;
+    height: 55px;
+  }
+
+  .skills__circle-line {
+    width: 175px;
+    height: 55px;
+  }
+
+  .skills__logos {
+    gap: 18px 12px;
+  }
+
+  .skills__logo-item {
+    width: 72px;
+  }
+
+  .skills__logo-icon {
+    width: 48px;
+    height: 48px;
+
+    img {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  .skills__logo-label {
+    font-size: 13px;
   }
 }
