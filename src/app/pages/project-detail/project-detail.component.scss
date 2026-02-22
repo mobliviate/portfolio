@@ -127,7 +127,7 @@
   }
 }
 
-/* ── Visual placeholder ── */
+/* ── Project image ── */
 .proj-detail__visual {
   flex-shrink: 0;
   display: flex;
@@ -137,18 +137,8 @@
 
 .proj-detail__image {
   width: 440px;
-  height: 340px;
   border-radius: 20px;
-  background: linear-gradient(135deg, var(--color-black) 0%, var(--accent, var(--color-highlight-2)) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.proj-detail__image-label {
-  font-size: 48px;
-  font-weight: 700;
-  opacity: 0.35;
+  object-fit: contain;
 }
 
 /* ── Actions (bottom) ── */
@@ -223,7 +213,6 @@
   .proj-detail__image {
     width: 100%;
     max-width: 520px;
-    height: 280px;
   }
 
   .proj-detail__actions {
@@ -248,11 +237,7 @@
   }
 
   .proj-detail__image {
-    height: 220px;
-  }
-
-  .proj-detail__image-label {
-    font-size: 32px;
+    max-width: 100%;
   }
 
   .proj-detail__skills {

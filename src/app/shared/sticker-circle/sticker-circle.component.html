@@ -1,0 +1,45 @@
+<div class="circle-sticker">
+  <div class="circle-sticker__content">
+    @if (centerImgSrc) {
+      <img
+        class="circle-sticker__center"
+        [src]="centerImgSrc"
+        [style.width.px]="imgWidth"
+        [style.height.px]="imgHeight"
+      />
+    } @else {
+      <span class="circle-sticker__logo-text">MO</span>
+    }
+
+    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <path [attr.id]="topId" [attr.d]="topArcD" fill="none"></path>
+      <path
+        [attr.id]="bottomId"
+        [attr.d]="config.bottomUpsideDown ? bottomArcFlippedD : bottomArcD"
+        fill="none"
+      ></path>
+
+      <text
+        [attr.font-size]="config.textFontSize"
+        [attr.fill]="config.textFill"
+        [attr.letter-spacing]="config.textLetterSpacing"
+        font-family="Bricolage Grotesque, sans-serif"
+        font-weight="bold"
+      >
+        <textPath
+          [attr.href]="'#' + topId"
+          [attr.startOffset]="topOffset"
+          text-anchor="middle"
+        >{{ topText }}</textPath>
+
+        <textPath
+          [attr.href]="'#' + bottomId"
+          [attr.startOffset]="bottomOffset"
+          text-anchor="middle"
+        >{{ bottomText }}</textPath>
+      </text>
+    </svg>
+  </div>
+
+  <img [src]="imgSrc" alt="" />
+</div>

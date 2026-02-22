@@ -1,0 +1,68 @@
+.circle-sticker {
+  position: relative;
+  color: var(--color-black);
+  font-size: 12px;
+  font-weight: 700;
+
+  > img {
+    width: 168px;
+    height: 168px;
+  }
+}
+
+.circle-sticker__content {
+  width: 168px;
+  height: 168px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .circle-sticker__center {
+    position: absolute;
+    display: block;
+  }
+
+  .circle-sticker__logo-text {
+    position: absolute;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.06em;
+    color: var(--color-highlight-2);
+  }
+
+  svg {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+  }
+}
+
+@media (max-width: 500px) {
+  .circle-sticker {
+    > img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .circle-sticker__content {
+    width: 120px;
+    height: 120px;
+
+    .circle-sticker__center {
+      width: 70px;
+      height: 35px;
+    }
+
+    .circle-sticker__logo-text {
+      font-size: 20px;
+    }
+
+    svg {
+      width: 140px;
+      height: 140px;
+    }
+  }
+}

@@ -1,40 +1,44 @@
 <section class="showcase" id="projects">
-  <div class="showcase__header">
-    <div class="showcase__heading">
-      <span class="showcase__label">{{ t('subtitle') }}</span>
-      <div class="showcase__title-wrap">
-        <h2 class="showcase__title">{{ t('title') }}</h2>
-        <div class="showcase__drawline" appScrollReveal [revealDelay]="300"></div>
-      </div>
-    </div>
-    <p class="showcase__intro">{{ t('intro') }}</p>
-  </div>
-
   <div class="showcase__grid">
+    <!-- Headline cell -->
+    <div class="showcase__headline">
+      <div class="showcase__heading">
+        <span class="showcase__label">{{ t('subtitle') }}</span>
+        <div class="showcase__title-row">
+          <h2 class="showcase__title">{{ t('title') }}</h2>
+          <div class="showcase__drawline" appScrollReveal [revealDelay]="300"></div>
+        </div>
+      </div>
+      <p class="showcase__intro">{{ t('intro') }}</p>
+    </div>
+
+    <!-- Project cards -->
     @for (project of projects; track project.id) {
-      <article class="showcase__card" [id]="project.id" [style.--card-accent]="project.accent">
-        <div class="showcase__card-visual">
-          <div class="showcase__card-placeholder">
-            <span>{{ project.title }}</span>
-          </div>
-          <div class="showcase__card-hover">
+      <div class="showcase__card" [id]="project.id">
+        <div class="showcase__card-image-wrap">
+          @if (project.showSticker) {
+            <div class="showcase__sticker">
+              <app-sticker-circle
+                variant="feature"
+                stickerColor="blue">
+              </app-sticker-circle>
+            </div>
+          }
+          <img class="showcase__card-img" [src]="project.imgUrl" [alt]="project.title" />
+          <div class="showcase__card-overlay">
             <a class="showcase__card-btn" [routerLink]="['/projects', project.id]">{{ t('details') }}</a>
           </div>
         </div>
-        <div class="showcase__card-info">
+
+        <div class="showcase__card-text">
           <h3 class="showcase__card-title">{{ project.title }}</h3>
           <p class="showcase__card-desc">{{ project.description[locale.current] }}</p>
-          <div class="showcase__card-tags">
-            @for (skill of project.skills; track skill.name) {
-              <span class="showcase__card-tag">{{ skill.name }}</span>
-            }
-          </div>
         </div>
 
         <div class="showcase__card-touch">
           <a class="showcase__card-btn showcase__card-btn--dark" [routerLink]="['/projects', project.id]">{{ t('details') }}</a>
         </div>
-      </article>
+      </div>
     }
   </div>
 </section>

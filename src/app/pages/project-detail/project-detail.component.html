@@ -41,9 +41,7 @@
 
       <!-- Right: visual -->
       <div class="proj-detail__visual">
-        <div class="proj-detail__image" [style.--accent]="project.accent">
-          <span class="proj-detail__image-label">{{ project.title }}</span>
-        </div>
+        <img class="proj-detail__image" [src]="project.imgUrl" [alt]="project.title" />
       </div>
     </div>
 
