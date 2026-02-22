@@ -8,11 +8,25 @@
     </div>
 
     <nav class="site-footer__links" aria-label="Footer navigation">
-      <a class="site-footer__link" routerLink="/legal/imprint">{{ t('imprint') }}</a>
-      <a class="site-footer__link" routerLink="/legal/privacy">{{ t('privacy') }}</a>
-      <a class="site-footer__link site-footer__link--social" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-      <a class="site-footer__link site-footer__link--social" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="site-footer__link site-footer__link--social" (click)="goToContact()" role="button">Email</a>
+      <div id="imprint" class="link-container">
+        <a routerLink="/legal/imprint">{{ t('imprint') }}</a>
+      </div>
+
+      <div id="privacy" class="link-container">
+        <a routerLink="/legal/privacy">{{ t('privacy') }}</a>
+      </div>
+
+      <div id="github" class="link-social icon-roll" appIconRoll>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div id="linkedin" class="link-social icon-roll" appIconRoll>
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div id="email" class="link-social icon-roll" appIconRoll>
+        <a (click)="goToContact()" role="button">Email</a>
+      </div>
     </nav>
   </div>
 </footer>

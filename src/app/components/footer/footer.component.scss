@@ -1,3 +1,47 @@
+/* ── Icon-roll animation mixins ── */
+
+@mixin icon-image() {
+  content: "";
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(0) rotate(180deg);
+}
+
+@mixin icon-roll-animation($forward: roll-right, $backward: roll-left, $duration: 0.5s) {
+  &.is-hovered::before {
+    animation: #{$forward} $duration ease-out forwards;
+  }
+  &.is-leaving::before {
+    animation: #{$backward} $duration ease-out forwards;
+  }
+}
+
+@keyframes roll-right {
+  0%   { transform: translateX(0) rotate(180deg); opacity: 0; }
+  30%  { opacity: 0.4; }
+  80%  { opacity: 1; transform: translateX(105%) rotate(370deg); }
+  90%  { transform: translateX(95%) rotate(350deg); }
+  100% { transform: translateX(100%) rotate(360deg); opacity: 1; }
+}
+
+@keyframes roll-left {
+  0%   { transform: translateX(100%) rotate(360deg); opacity: 1; }
+  20%  { transform: translateX(110%) rotate(380deg); }
+  100% { transform: translateX(0) rotate(180deg); opacity: 0; }
+}
+
+/* ── Draw-line animation ── */
+
+@keyframes drawLeftToRight {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+/* ── Footer layout ── */
+
 .site-footer {
   width: 100%;
   padding-bottom: 28px;
@@ -39,32 +83,126 @@
   font-weight: 700;
 }
 
+/* ── Footer links row ── */
+
 .site-footer__links {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
   height: 42px;
-}
 
-.site-footer__link {
-  font-size: 18px;
-  font-weight: 500;
-  text-decoration: none;
-  color: var(--footer-color, var(--color-white));
-  padding: 8px 16px;
-  border-radius: 100px;
-  transition: background 0.2s, color 0.2s;
-  cursor: pointer;
-
-  &:hover {
-    background: var(--color-highlight-2);
-    color: var(--color-white);
+  a {
+    text-decoration: none;
+    color: var(--footer-color, var(--color-white));
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
   }
 }
 
-@media (max-width: 768px) {
+/* ── Legal links (yellow underline on hover) ── */
+
+.link-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: max-content;
+
+  a {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    clip-path: inset(100% 0 0 0);
+    animation-fill-mode: forwards !important;
+    pointer-events: none;
+  }
+}
+
+#imprint {
+  &::after {
+    background-image: url('/assets/00_Hand-drawn lines/00_Header/Color option 1/3.png');
+    width: 90px;
+    height: 42px;
+  }
+
+  &:hover::after {
+    animation: drawLeftToRight 0.25s forwards;
+  }
+}
+
+#privacy {
+  &::after {
+    background-image: url('/assets/00_Hand-drawn lines/00_Header/Color option 1/4.png');
+    width: 120px;
+    height: 42px;
+  }
+
+  &:hover::after {
+    animation: drawLeftToRight 0.25s forwards;
+  }
+}
+
+/* ── Social links (icon-roll + blue pill on hover) ── */
+
+.link-social {
+  position: relative;
+  height: 40px;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+  border-radius: 100px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--color-highlight-2);
+
+    a {
+      color: var(--color-white);
+    }
+  }
+}
+
+.icon-roll {
+  &::before {
+    top: -32px;
+    width: 32px;
+    height: 32px;
+    @include icon-image();
+  }
+  @include icon-roll-animation();
+}
+
+#github::before {
+  left: 40%;
+  background-image: url('/assets/icons/socials/git_hub.svg');
+  filter: var(--footer-img-filter, invert(0));
+}
+
+#linkedin::before {
+  left: 45%;
+  background-image: url('/assets/icons/socials/linkedin.svg');
+  filter: var(--footer-img-filter, invert(0));
+}
+
+#email::before {
+  left: 30%;
+  background-image: url('/assets/icons/socials/email.svg');
+  filter: var(--footer-img-filter, invert(0));
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 1024px) {
   .site-footer__brand {
     flex-direction: row;
     justify-content: space-between;
@@ -73,16 +211,48 @@
 
   .site-footer__links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      ". imprint privacy"
+      "github linkedin email";
+    gap: 24px;
     justify-items: center;
+    align-items: center;
     height: auto;
-    gap: 12px;
+  }
+
+  #imprint        { grid-area: imprint; justify-self: end; }
+  #privacy        { grid-area: privacy; justify-self: end; }
+  #github         { grid-area: github; }
+  #linkedin       { grid-area: linkedin; }
+  #email          { grid-area: email; }
+
+  .link-social {
+    width: max-content;
+    justify-content: center;
+  }
+
+  .link-container {
+    justify-self: end;
   }
 }
 
 @media (max-width: 500px) {
-  .site-footer__link {
-    font-size: 16px;
-    padding: 6px 12px;
+  #imprint        { justify-self: center; }
+  #privacy        { justify-self: center; }
+}
+
+@media (max-width: 375px) {
+  .site-footer__links {
+    grid-template-areas:
+      "imprint . privacy"
+      "github linkedin email";
+    grid-column-gap: 0;
+    grid-row-gap: 24px;
+
+    a {
+      font-size: 16px;
+    }
   }
 }

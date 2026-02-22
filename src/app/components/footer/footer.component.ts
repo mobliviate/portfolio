@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { LocaleService } from '../../shared/services/locale.service';
+import { IconRollDirective } from '../../shared/directives/icon-roll.directive';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, IconRollDirective],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
