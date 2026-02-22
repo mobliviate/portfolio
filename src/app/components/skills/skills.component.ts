@@ -27,7 +27,7 @@ export class SkillsComponent {
 
   labels: Record<string, Record<string, string>> = {
     subtitle: { en: 'MY STACK', de: 'MEIN STACK' },
-    title: { en: 'Skill set', de: 'Fähigkeiten' },
+    title: { en: 'Skill set', de: 'Skill set' },
     description: {
       en: 'A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies.',
       de: 'Ich habe Erfahrung im Aufbau von Projekten mit verschiedenen Frontend-Technologien und Konzepten. Ich bin stets offen, neue Technologien zu erlernen und mich an sie anzupassen.',
