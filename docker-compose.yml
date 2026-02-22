@@ -1,0 +1,6 @@
+services:
+  portfolio:
+    image: ghcr.io/mobliviate/portfolio:latest
+    ports:
+      - "3005:80"
+    restart: unless-stopped
