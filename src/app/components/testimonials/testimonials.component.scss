@@ -133,7 +133,7 @@
   height: 318px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 125ms ease;
 }
 
 .voices__quote {
@@ -154,7 +154,7 @@
 }
 
 .voices__reviewer {
-  transition: color 0.3s ease;
+  transition: color 125ms ease;
 
   .voices__author-name {
     font-size: 20px;
@@ -174,7 +174,7 @@
   font-weight: 500;
   text-decoration: none;
   color: var(--color-black);
-  transition: color 0.3s ease;
+  transition: color 125ms ease;
 
   svg {
     width: 24px;

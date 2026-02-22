@@ -18,20 +18,22 @@ export class ScrollRevealDirective implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const apply = () => this.renderer.addClass(this.el.nativeElement, this.revealClass);
-          this.revealDelay > 0 ? setTimeout(apply, this.revealDelay) : apply();
-        } else {
-          this.renderer.removeClass(this.el.nativeElement, this.revealClass);
-          if (this.hideClass) {
-            this.renderer.addClass(this.el.nativeElement, this.hideClass);
-          }
-        }
-      },
+      ([entry]) => this.handleIntersection(entry),
       { threshold: 0.6 },
     );
     this.observer.observe(this.el.nativeElement);
+  }
+
+  private handleIntersection(entry: IntersectionObserverEntry): void {
+    if (entry.isIntersecting) {
+      const apply = () => this.renderer.addClass(this.el.nativeElement, this.revealClass);
+      this.revealDelay > 0 ? setTimeout(apply, this.revealDelay) : apply();
+    } else {
+      this.renderer.removeClass(this.el.nativeElement, this.revealClass);
+      if (this.hideClass) {
+        this.renderer.addClass(this.el.nativeElement, this.hideClass);
+      }
+    }
   }
 
   ngOnDestroy(): void {

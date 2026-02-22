@@ -229,7 +229,7 @@ textarea:-webkit-autofill {
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition: background 125ms, box-shadow 125ms, transform 125ms;
 
   &:hover:not(:disabled) {
     background: var(--color-highlight-3);

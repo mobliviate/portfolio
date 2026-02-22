@@ -32,7 +32,7 @@
   text-decoration: none;
   flex-shrink: 0;
   color: var(--color-highlight-2);
-  transition: color 0.25s ease;
+  transition: color 125ms ease;
 
   &:hover {
     color: var(--color-highlight-1);
@@ -70,7 +70,7 @@
   color: var(--color-white);
   white-space: nowrap;
   cursor: pointer;
-  transition: opacity 160ms ease;
+  transition: opacity 125ms ease;
 }
 
 .hero-header__link::after {
@@ -78,7 +78,7 @@
   position: absolute;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 250ms ease;
+  transition: opacity 125ms ease;
   pointer-events: none;
   z-index: 1;
 }
@@ -140,7 +140,7 @@
   color: var(--color-white);
   mix-blend-mode: difference;
   cursor: pointer;
-  transition: color 160ms ease;
+  transition: color 125ms ease;
 }
 
 .hero-header__language-btn--active {
@@ -179,7 +179,7 @@
   border-radius: 50%;
   background: var(--color-highlight-2);
   border: 1px solid var(--color-white);
-  transition: left 200ms ease;
+  transition: left 125ms ease;
 }
 
 .hero-header__toggle--right .hero-header__toggle-thumb {

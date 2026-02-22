@@ -65,7 +65,7 @@
   font-size: 32px;
   letter-spacing: -0.06em;
   color: var(--color-highlight-2);
-  transition: color 0.2s;
+  transition: color 125ms;
 
   &:hover {
     color: var(--color-highlight-1);
@@ -149,7 +149,7 @@
   align-items: center;
   padding: 0 24px;
   border-radius: 100px;
-  transition: background-color 0.2s;
+  transition: background-color 125ms;
 
   &:hover {
     background-color: var(--color-highlight-2);

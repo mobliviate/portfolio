@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 
@@ -12,4 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
 })
 export class AppComponent {
   title = 'portfolio';
+
+  constructor() {
+    inject(ViewportScroller).setOffset([0, 80]);
+  }
 }

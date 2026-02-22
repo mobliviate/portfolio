@@ -184,10 +184,10 @@
   color: var(--color-black);
   background: rgba(14, 16, 19, 0.01);
   transition:
-    background 0.15s ease,
-    box-shadow 0.15s ease,
-    transform 0.15s ease,
-    color 0.15s ease;
+    background 125ms ease,
+    box-shadow 125ms ease,
+    transform 125ms ease,
+    color 125ms ease;
 
   &:hover,
   &:focus-visible {

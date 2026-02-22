@@ -107,7 +107,7 @@
   width: 90%;
   height: auto;
   object-fit: contain;
-  transition: transform 0.4s ease;
+  transition: transform 125ms ease;
 }
 
 .bounce-animation {
@@ -125,7 +125,7 @@
   border-radius: 20px;
   background: linear-gradient(180deg, rgba(14, 16, 19, 0) 50%, #0E1013 100%);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 125ms ease;
   pointer-events: none;
   display: flex;
   align-items: flex-end;
@@ -146,7 +146,7 @@
   text-decoration: none;
   background: none;
   pointer-events: auto;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition: background 125ms, box-shadow 125ms, transform 125ms;
 
   &:hover {
     background: var(--color-highlight-3);
