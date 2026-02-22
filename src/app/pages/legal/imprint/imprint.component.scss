@@ -37,21 +37,25 @@ h1 {
   font-weight: 700;
 }
 
+.section-title {
+  font-size: 24px;
+}
+
 h2 {
   color: var(--color-highlight-2);
   margin: 0;
-  font-size: 32px;
+  font-size: 19px;
 }
 
 p {
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 ul {
   margin: 0;
   padding-left: 24px;
-  font-size: 20px;
+  font-size: 16px;
 
   li {
     margin-bottom: 4px;
@@ -88,12 +92,16 @@ a {
     font-size: 30px;
   }
 
+  .section-title {
+    font-size: 20px;
+  }
+
   h2 {
-    font-size: 24px;
+    font-size: 17px;
   }
 
   p, ul {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .title-bg {
@@ -106,11 +114,15 @@ a {
     font-size: 25px;
   }
 
+  .section-title {
+    font-size: 18px;
+  }
+
   h2 {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   p, ul {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
