@@ -5,10 +5,10 @@
     </a>
 
     <nav class="hero-header__nav" aria-label="Main navigation">
-      <a class="hero-header__link" (click)="goTo('about')">About me</a>
-      <a class="hero-header__link" (click)="goTo('skills')">Skills</a>
-      <a class="hero-header__link" (click)="goTo('projects')">Projects</a>
-      <a class="hero-header__link" (click)="goTo('contact')">Contact</a>
+      <a class="hero-header__link" (click)="goTo('about')">{{ t('about') }}</a>
+      <a class="hero-header__link" (click)="goTo('skills')">{{ t('skills') }}</a>
+      <a class="hero-header__link" (click)="goTo('projects')">{{ t('projects') }}</a>
+      <a class="hero-header__link" (click)="goTo('contact')">{{ t('contact') }}</a>
     </nav>
 
     <div class="hero-header__language" aria-label="Toggle language" (click)="locale.toggle()">

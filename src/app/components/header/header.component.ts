@@ -18,6 +18,17 @@ export class HeaderComponent {
   private router = inject(Router);
   private scroller = inject(ViewportScroller);
 
+  labels: Record<string, Record<string, string>> = {
+    about: { en: 'About me', de: 'Über mich' },
+    skills: { en: 'Skills', de: 'Fähigkeiten' },
+    projects: { en: 'Projects', de: 'Projekte' },
+    contact: { en: 'Contact', de: 'Kontakt' },
+  };
+
+  t(key: string): string {
+    return this.labels[key]?.[this.locale.current] ?? '';
+  }
+
   goTo(section: string): void {
     this.router.navigate(['/'], { fragment: section }).then(() => {
       setTimeout(() => this.scroller.scrollToAnchor(section), 120);
