@@ -41,6 +41,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-
+.npm-cache/
 up.sh
 
