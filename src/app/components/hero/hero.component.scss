@@ -244,7 +244,7 @@
   width: 204px;
   height: 244px;
   right: 48px;
-  top: 6px;
+  top: -5px;
   transform: rotate(8deg);
   pointer-events: auto;
   margin: 0;
@@ -386,7 +386,7 @@
 
   .hero__polaroid {
     position: relative;
-    right: auto;
+    left: 20%;
     top: auto;
     align-self: center;
     transform: rotate(6deg);
@@ -397,12 +397,12 @@
     align-self: center;
   }
 
-  .hero__socials {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 48px;
-  }
+  // .hero__socials {
+  //   position: static;
+  //   flex-direction: row;
+  //   justify-content: center;
+  //   margin-bottom: 48px;
+  // }
 }
 
 /* ── Mobile (≤ 500px) – Figma: 375 × 812 ── */
@@ -473,6 +473,7 @@
     transform: rotate(8deg);
     align-self: center;
     margin: 0;
+    left: auto;
   }
 
   /* Social icons: hidden on mobile */
