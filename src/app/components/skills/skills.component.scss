@@ -1,20 +1,19 @@
-:host {
-  display: block;
-  background: url('/assets/01_Background/Design Size Relation@3x/03_Skills.png') center / cover no-repeat;
+/* ── Skills Section ── */
+.skills {
+  background-image: url('/assets/01_Background/Img Original Size/Skills BG.png'); 
+  background-size: cover;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-color: var(--color-white);
   position: relative;
   z-index: 2;
-}
-
-/* ── Skills Section (Figma: 1440 × 800) ── */
-.skills {
-  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 144px 120px;
+  padding: 100px clamp(16px, 5vw, 120px) 200px;
   max-width: 1440px;
-  min-height: 800px;
   margin: 0 auto;
 }
 

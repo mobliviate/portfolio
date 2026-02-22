@@ -1,10 +1,16 @@
-<div class="privacy-page">
-  <h1 class="privacy-page__title">{{ pageTitle[locale.current] }}</h1>
+<div class="title-bg">
+  <div class="legal-title">
+    <h1>{{ pageTitle[locale.current] }}</h1>
+  </div>
+</div>
 
-  @for (section of sections; track section.title) {
-    <div class="privacy-page__section">
-      <h2>{{ section.title }}</h2>
-      <p>{{ section.text }}</p>
-    </div>
-  }
+<div class="content-area">
+  <div class="privacy-policy">
+    @for (section of sections; track section.title) {
+      <div class="privacy-page__section">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.text }}</p>
+      </div>
+    }
+  </div>
 </div>
