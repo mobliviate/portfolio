@@ -1,1 +1,35 @@
-<p>testimonials works!</p>
+<section class="voices" id="testimonials">
+  <div class="voices__header">
+    <div class="voices__heading">
+      <div class="voices__sub-row">
+        <div class="voices__drawline" appScrollReveal [revealDelay]="300"></div>
+        <span class="voices__label">{{ t('subtitle') }}</span>
+      </div>
+      <h2 class="voices__title">{{ t('title') }}</h2>
+    </div>
+  </div>
+
+  <div class="voices__stack">
+    @for (review of reviews; track review.author; let i = $index) {
+      <article
+        class="voices__card voices__card--{{ i }}"
+        [style.transform]="getRotation(i)"
+      >
+        <blockquote class="voices__quote">
+          &ldquo;{{ review.quote[locale.current] }}&rdquo;
+        </blockquote>
+        <div class="voices__author-row">
+          <div class="voices__author-info">
+            <strong class="voices__author-name">{{ review.author }}</strong>
+            <span class="voices__author-role">{{ review.role[locale.current] }}</span>
+          </div>
+          @if (review.linkedIn) {
+            <a class="voices__linkedin" [href]="review.linkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="/assets/03_Stickers/Linkedin.png" alt="" width="24" height="24" />
+            </a>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>

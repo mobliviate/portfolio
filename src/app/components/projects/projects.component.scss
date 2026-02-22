@@ -1,0 +1,230 @@
+:host {
+  display: block;
+  color: var(--color-white);
+}
+
+.showcase {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 120px clamp(16px, 5vw, 120px);
+}
+
+.showcase__header {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.showcase__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+  width: 320px;
+}
+
+.showcase__label {
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.showcase__title-wrap {
+  position: relative;
+}
+
+.showcase__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 100%;
+}
+
+.showcase__drawline {
+  position: relative;
+  height: 60px;
+  width: 100%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/00_Hand-drawn lines/03_Portfolio/Color option 1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    clip-path: inset(100% 0 0 0);
+    animation-fill-mode: forwards !important;
+  }
+
+  &.revealed::after {
+    animation: sweep-ltr 0.3s forwards;
+  }
+}
+
+@keyframes sweep-ltr {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+.showcase__intro {
+  margin: 0;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: justify;
+  max-width: 560px;
+}
+
+/* ── Grid ── */
+.showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+
+/* ── Card ── */
+.showcase__card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.showcase__card-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.showcase__card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-black-deep) 0%, var(--card-accent, var(--color-highlight-2)) 100%);
+  transition: transform 0.4s ease;
+
+  span {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--color-white);
+    opacity: 0.6;
+  }
+}
+
+.showcase__card-visual:hover .showcase__card-placeholder {
+  transform: scale(1.06);
+}
+
+.showcase__card-hover {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(180deg, transparent 40%, rgba(14, 16, 19, 0.9) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.showcase__card-visual:hover .showcase__card-hover {
+  opacity: 1;
+}
+
+.showcase__card-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+
+  &:hover {
+    background: var(--color-highlight-3);
+    transform: translateY(-2px);
+  }
+}
+
+.showcase__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.showcase__card-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.showcase__card-desc {
+  margin: 0;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.showcase__card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.showcase__card-tag {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(var(--color-white-rgb), 0.2);
+  color: rgba(var(--color-white-rgb), 0.7);
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .showcase__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .showcase__header {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .showcase__heading {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .showcase {
+    padding: 88px 16px;
+  }
+
+  .showcase__title {
+    font-size: 48px;
+  }
+
+  .showcase__label {
+    font-size: 18px;
+  }
+
+  .showcase__card-placeholder span {
+    font-size: 28px;
+  }
+
+  .showcase__card-desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

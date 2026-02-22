@@ -1,17 +1,33 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, HostListener, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
+import { LocaleService } from '../../shared/services/locale.service';
+import { MobileNavService } from '../../shared/services/mobile-nav.service';
+import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, MobileMenuComponent],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  lang: 'en' | 'de' = 'en';
+  locale = inject(LocaleService);
+  mobileNav = inject(MobileNavService);
+  private router = inject(Router);
+  private scroller = inject(ViewportScroller);
 
-  toggleLang(): void {
-    this.lang = this.lang === 'en' ? 'de' : 'en';
+  goTo(section: string): void {
+    this.router.navigate(['/'], { fragment: section }).then(() => {
+      setTimeout(() => this.scroller.scrollToAnchor(section), 120);
+    });
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    if (window.innerWidth > 500 && this.mobileNav.isOpen()) {
+      this.mobileNav.close();
+    }
   }
 }

@@ -1,0 +1,41 @@
+<section class="overlay-menu">
+  <div class="overlay-menu__top">
+    <a class="overlay-menu__logo" routerLink="/" (click)="nav.close()">MO</a>
+    <button class="overlay-menu__close" (click)="nav.close()" aria-label="Close menu">
+      <img src="/assets/07_Header/close.webp" alt="" width="32" height="32" />
+    </button>
+  </div>
+
+  <nav class="overlay-menu__nav">
+    <a class="overlay-menu__item" (click)="goTo('about')">About me</a>
+    <a class="overlay-menu__item" (click)="goTo('skills')">Skills</a>
+    <a class="overlay-menu__item" (click)="goTo('projects')">Projects</a>
+    <a class="overlay-menu__item" (click)="goTo('contact')">Contact</a>
+  </nav>
+
+  <div class="overlay-menu__lang">
+    <button
+      class="overlay-menu__lang-btn"
+      [class.overlay-menu__lang-btn--active]="locale.current === 'en'"
+      (click)="locale.set('en')"
+    >EN</button>
+    <span class="overlay-menu__lang-sep">|</span>
+    <button
+      class="overlay-menu__lang-btn"
+      [class.overlay-menu__lang-btn--active]="locale.current === 'de'"
+      (click)="locale.set('de')"
+    >DE</button>
+  </div>
+
+  <div class="overlay-menu__socials">
+    <a class="overlay-menu__social" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <img src="/assets/03_Stickers/Linkedin.png" alt="" width="32" height="32" />
+    </a>
+    <a class="overlay-menu__social" href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+      <img src="/assets/03_Stickers/Github.png" alt="" width="32" height="32" />
+    </a>
+    <a class="overlay-menu__social" href="mailto:hello@marcoder.com" aria-label="E-Mail">
+      <img src="/assets/03_Stickers/mail.png" alt="" width="32" height="32" />
+    </a>
+  </div>
+</section>

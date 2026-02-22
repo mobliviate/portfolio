@@ -1,0 +1,10 @@
+<div class="privacy-page">
+  <h1 class="privacy-page__title">{{ pageTitle[locale.current] }}</h1>
+
+  @for (section of sections; track section.title) {
+    <div class="privacy-page__section">
+      <h2>{{ section.title }}</h2>
+      <p>{{ section.text }}</p>
+    </div>
+  }
+</div>

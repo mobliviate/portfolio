@@ -37,3 +37,12 @@ body {
 a {
   color: inherit;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--color-highlight-2);
+  color: var(--color-white);
+}

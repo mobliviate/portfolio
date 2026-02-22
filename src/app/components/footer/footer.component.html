@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="site-footer__logo" routerLink="/" aria-label="Home">
+        <span>MO</span>
+      </a>
+      <span class="site-footer__copy">&copy; Marc Odermatt 2026</span>
+    </div>
+
+    <nav class="site-footer__links" aria-label="Footer navigation">
+      <a class="site-footer__link" routerLink="/legal/imprint">{{ t('imprint') }}</a>
+      <a class="site-footer__link" routerLink="/legal/privacy">{{ t('privacy') }}</a>
+      <a class="site-footer__link site-footer__link--social" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      <a class="site-footer__link site-footer__link--social" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="site-footer__link site-footer__link--social" (click)="goToContact()" role="button">Email</a>
+    </nav>
+  </div>
+</footer>

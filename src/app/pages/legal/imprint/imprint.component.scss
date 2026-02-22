@@ -1,0 +1,30 @@
+.imprint-page__title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 48px;
+}
+
+.imprint-page__section {
+  margin-bottom: 32px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0;
+  }
+
+  a {
+    color: var(--color-highlight-2);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-highlight-1);
+    }
+  }
+}

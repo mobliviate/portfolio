@@ -5,32 +5,38 @@
     </a>
 
     <nav class="hero-header__nav" aria-label="Main navigation">
-      <a class="hero-header__link" href="#about">About me</a>
-      <a class="hero-header__link" href="#skills">Skills</a>
-      <a class="hero-header__link" href="#projects">Projects</a>
-      <a class="hero-header__link" href="#contact">Contact</a>
+      <a class="hero-header__link" (click)="goTo('about')">About me</a>
+      <a class="hero-header__link" (click)="goTo('skills')">Skills</a>
+      <a class="hero-header__link" (click)="goTo('projects')">Projects</a>
+      <a class="hero-header__link" (click)="goTo('contact')">Contact</a>
     </nav>
 
-    <div class="hero-header__language" aria-label="Toggle language" (click)="toggleLang()">
+    <div class="hero-header__language" aria-label="Toggle language" (click)="locale.toggle()">
       <button
         class="hero-header__language-btn"
-        [class.hero-header__language-btn--active]="lang === 'en'"
+        [class.hero-header__language-btn--active]="locale.current === 'en'"
         type="button"
       >EN</button>
-      <span class="hero-header__toggle" [class.hero-header__toggle--right]="lang === 'de'" aria-hidden="true">
+      <span class="hero-header__toggle" [class.hero-header__toggle--right]="locale.current === 'de'" aria-hidden="true">
         <span class="hero-header__toggle-thumb"></span>
       </span>
       <button
         class="hero-header__language-btn"
-        [class.hero-header__language-btn--active]="lang === 'de'"
+        [class.hero-header__language-btn--active]="locale.current === 'de'"
         type="button"
       >DE</button>
     </div>
 
-    <button class="hero-header__menu" type="button" aria-label="Menu">
-      <span class="hero-header__menu-line"></span>
-      <span class="hero-header__menu-line"></span>
-      <span class="hero-header__menu-line"></span>
+    <button class="hero-header__menu" type="button" aria-label="Menu" (click)="mobileNav.open()">
+      <img src="/assets/07_Header/default.webp" alt="" width="32" height="32" />
     </button>
   </div>
 </header>
+
+<div
+  class="hero-header__overlay"
+  [class.hero-header__overlay--open]="mobileNav.isOpen()"
+  (click)="mobileNav.close()"
+>
+  <app-mobile-menu (click)="$event.stopPropagation()"></app-mobile-menu>
+</div>

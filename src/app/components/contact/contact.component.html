@@ -1,0 +1,62 @@
+<section class="reach-out" id="contact">
+  <div class="reach-out__inner">
+    <div class="reach-out__info">
+      <div class="reach-out__heading">
+        <span class="reach-out__label">{{ t('subtitle') }}</span>
+        <h2 class="reach-out__title">{{ t('title') }}</h2>
+      </div>
+      <p class="reach-out__intro">{{ t('intro') }}</p>
+      <div class="reach-out__line" appScrollReveal [revealDelay]="300"></div>
+    </div>
+
+    <form class="reach-out__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="reach-out__field">
+        <label for="cf-name">{{ t('name') }}</label>
+        <input id="cf-name" formControlName="name" type="text" [placeholder]="t('namePlaceholder')" />
+        @if (form.get('name')?.invalid && form.get('name')?.touched) {
+          <span class="reach-out__error">{{ t('nameError') }}</span>
+        }
+      </div>
+
+      <div class="reach-out__field">
+        <label for="cf-email">{{ t('email') }}</label>
+        <input id="cf-email" formControlName="email" type="email" [placeholder]="t('emailPlaceholder')" />
+        @if (form.get('email')?.invalid && form.get('email')?.touched) {
+          <span class="reach-out__error">{{ t('emailError') }}</span>
+        }
+      </div>
+
+      <div class="reach-out__field">
+        <label for="cf-msg">{{ t('message') }}</label>
+        <textarea id="cf-msg" formControlName="message" [placeholder]="t('messagePlaceholder')" rows="5"></textarea>
+        @if (form.get('message')?.invalid && form.get('message')?.touched) {
+          <span class="reach-out__error">{{ t('messageError') }}</span>
+        }
+      </div>
+
+      <div class="reach-out__policy">
+        <div class="reach-out__checkbox" (click)="togglePolicy()">
+          @if (policyAccepted()) {
+            <img src="/assets/06_Contact/checked_mark.svg" alt="Checked" />
+          } @else {
+            <img src="/assets/06_Contact/check_mark.svg" alt="Unchecked" />
+          }
+        </div>
+        <span>{{ t('privacy') }} <a routerLink="/legal/privacy">{{ t('privacyLink') }}</a></span>
+      </div>
+
+      <div class="reach-out__actions">
+        <button class="reach-out__submit" type="submit" [disabled]="!canSubmit">
+          {{ t('send') }}
+        </button>
+      </div>
+
+      @if (submitState() === 'success') {
+        <div class="reach-out__msg reach-out__msg--ok">{{ t('success') }}</div>
+      }
+      @if (submitState() === 'error') {
+        <div class="reach-out__msg reach-out__msg--fail">{{ t('error') }}</div>
+      }
+    </form>
+  </div>
+</section>
