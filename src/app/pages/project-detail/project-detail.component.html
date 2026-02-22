@@ -1,5 +1,5 @@
 <section class="section-bg">
-  <div class="proj-detail__container">
+  <div class="proj-detail-container">
 
     <div class="arrow-back-container">
       <a (click)="goBackToOverview()">
@@ -10,30 +10,30 @@
       </a>
     </div>
 
-    <div class="proj-detail__body">
-      <div class="proj-detail__info">
-        <div class="proj-detail__headline">
+    <div class="proj-detail-body">
+      <div class="proj-detail-info">
+        <div class="proj-detail-headline">
           <h1>{{ project.title }}</h1>
-          <div class="proj-detail__drawline" appScrollReveal [revealDelay]="200"></div>
+          <div class="proj-detail-drawline" appScrollReveal [revealDelay]="200"></div>
         </div>
 
-        <div class="proj-detail__section description-project">
+        <div class="proj-detail-section description-project">
           <h2>{{ t('descTitle') }}</h2>
           <p>{{ project.description[locale.current] }}</p>
         </div>
 
-        <div class="proj-detail__section description-process">
+        <div class="proj-detail-section description-process">
           <h2>{{ t('processTitle') }}</h2>
           <p>{{ project.process[locale.current] }}</p>
         </div>
 
-        <div class="proj-detail__duration duration">
+        <div class="proj-detail-duration duration">
           <p><strong>{{ t('durationLabel') }}:</strong> {{ project.duration[locale.current] }}</p>
         </div>
 
-        <div class="proj-detail__skills project-skills">
+        <div class="proj-detail-skills project-skills">
           @for (skill of project.skills; track skill.name) {
-            <div class="proj-detail__skill">
+            <div class="proj-detail-skill">
               <img [src]="skill.icon" [alt]="skill.name" width="32" height="32" />
               <p>{{ skill.name }}</p>
             </div>
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="proj-detail__visual">
+      <div class="proj-detail-visual">
         @if (project.showSticker) {
           <div class="sticker-container">
             <app-sticker-circle
@@ -50,19 +50,19 @@
             </app-sticker-circle>
           </div>
         }
-        <img class="proj-detail__image" [src]="project.detailImgUrl || project.imgUrl" [alt]="project.title" />
-        <div class="proj-detail__buttons">
+        <img class="proj-detail-image" [src]="project.detailImgUrl || project.imgUrl" [alt]="project.title" />
+        <div class="proj-detail-buttons">
           @if (project.githubUrl) {
-            <a class="proj-detail__btn blend-diff" [href]="project.githubUrl" target="_blank" rel="noopener">{{ t('github') }}</a>
+            <a class="proj-detail-btn blend-diff" [href]="project.githubUrl" target="_blank" rel="noopener">{{ t('github') }}</a>
           }
           @if (project.liveUrl) {
-            <a class="proj-detail__btn blend-diff" [href]="project.liveUrl" target="_blank" rel="noopener">{{ t('live') }}</a>
+            <a class="proj-detail-btn blend-diff" [href]="project.liveUrl" target="_blank" rel="noopener">{{ t('live') }}</a>
           }
         </div>
       </div>
     </div>
 
-    <div class="proj-detail__actions">
+    <div class="proj-detail-actions">
       <a class="arrow-next" (click)="nextProject()">
         <p>{{ t('next') }}</p>
         <img src="/assets/00_Hand-drawn lines/03_Portfolio/Breadcrumbs/Next project arrow 1.png" alt="" />

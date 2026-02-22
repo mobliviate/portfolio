@@ -1,101 +1,101 @@
 <section class="about" id="about">
-  <div class="about__location">
-    <div class="about__card about__card--yellow">
+  <div class="about-location">
+    <div class="about-card about-card--yellow">
       <picture>
         <source
           media="(max-width: 500px)"
           srcset="/assets/02_Ripped Paper/Option 1/Mobile/About me 1.png"
         />
         <img
-          class="about__card-bg"
+          class="about-card-bg"
           src="/assets/02_Ripped Paper/Option 1/Yellow.png"
           alt=""
           aria-hidden="true"
         />
       </picture>
-      <div class="about__card-content">
+      <div class="about-card-content">
         <img
-          class="about__card-icon"
+          class="about-card-icon"
           src="/assets/04_About_me/location.png"
           alt=""
           width="40"
           height="40"
           aria-hidden="true"
         />
-        <span class="about__card-label">{{ t('location') }}</span>
+        <span class="about-card-label">{{ t('location') }}</span>
       </div>
     </div>
 
-    <div class="about__card about__card--blue">
+    <div class="about-card about-card--blue">
       <picture>
         <source
           media="(max-width: 500px)"
           srcset="/assets/02_Ripped Paper/Option 1/Mobile/About me 2.png"
         />
         <img
-          class="about__card-bg"
+          class="about-card-bg"
           src="/assets/02_Ripped Paper/Option 1/2 Blue.png"
           alt=""
           aria-hidden="true"
         />
       </picture>
-      <div class="about__card-content">
+      <div class="about-card-content">
         <img
-          class="about__card-icon"
+          class="about-card-icon"
           src="/assets/04_About_me/relocation.png"
           alt=""
           width="40"
           height="40"
           aria-hidden="true"
         />
-        <span class="about__card-label">{{ t('relocate') }}</span>
+        <span class="about-card-label">{{ t('relocate') }}</span>
       </div>
     </div>
 
-    <div class="about__card about__card--orange">
+    <div class="about-card about-card--orange">
       <picture>
         <source
           media="(max-width: 500px)"
           srcset="/assets/02_Ripped Paper/Option 1/Mobile/About me 3.png"
         />
         <img
-          class="about__card-bg"
+          class="about-card-bg"
           src="/assets/02_Ripped Paper/Option 1/3 Orange.png"
           alt=""
           aria-hidden="true"
         />
       </picture>
-      <div class="about__card-content">
+      <div class="about-card-content">
         <img
-          class="about__card-icon"
+          class="about-card-icon"
           src="/assets/04_About_me/remote.png"
           alt=""
           width="40"
           height="40"
           aria-hidden="true"
         />
-        <span class="about__card-label">{{ t('remote') }}</span>
+        <span class="about-card-label">{{ t('remote') }}</span>
       </div>
     </div>
   </div>
 
-  <div class="about__content">
-    <div class="about__header">
-      <span class="about__subtitle">{{ t('subtitle') }}</span>
-      <div class="about__title-wrap">
-        <h2 class="about__title">{{ t('title') }}</h2>
-        <div class="about__blueline">
+  <div class="about-content">
+    <div class="about-header">
+      <span class="about-subtitle">{{ t('subtitle') }}</span>
+      <div class="about-title-wrap">
+        <h2 class="about-title">{{ t('title') }}</h2>
+        <div class="about-blueline">
           <img src="/assets/04_About_me/Blue line.png" alt="" />
         </div>
       </div>
     </div>
 
-    <p class="about__text">
+    <p class="about-text">
       {{ t('text') }}
       <br /><br />
       {{ t('textSuffix') }}
     </p>
 
-    <a class="about__cta" (click)="scrollToContact()" role="button">{{ t('cta') }}</a>
+    <a class="about-cta" (click)="scrollToContact()" role="button">{{ t('cta') }}</a>
   </div>
 </section>

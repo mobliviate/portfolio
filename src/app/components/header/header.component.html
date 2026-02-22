@@ -1,41 +1,41 @@
 <header class="hero-header" aria-label="Primary">
-  <div class="hero-header__inner">
-    <a class="hero-header__logo" routerLink="/" aria-label="Marc Odermatt home">
-      <span class="hero-header__logo-text" aria-hidden="true">MO</span>
+  <div class="hero-header-inner">
+    <a class="hero-header-logo" routerLink="/" aria-label="Marc Odermatt home">
+      <span class="hero-header-logo-text" aria-hidden="true">MO</span>
     </a>
 
-    <nav class="hero-header__nav" aria-label="Main navigation">
-      <a class="hero-header__link" (click)="goTo('about')">{{ t('about') }}</a>
-      <a class="hero-header__link" (click)="goTo('skills')">{{ t('skills') }}</a>
-      <a class="hero-header__link" (click)="goTo('projects')">{{ t('projects') }}</a>
-      <a class="hero-header__link" (click)="goTo('contact')">{{ t('contact') }}</a>
+    <nav class="hero-header-nav" aria-label="Main navigation">
+      <a class="hero-header-link" (click)="goTo('about')">{{ t('about') }}</a>
+      <a class="hero-header-link" (click)="goTo('skills')">{{ t('skills') }}</a>
+      <a class="hero-header-link" (click)="goTo('projects')">{{ t('projects') }}</a>
+      <a class="hero-header-link" (click)="goTo('contact')">{{ t('contact') }}</a>
     </nav>
 
-    <div class="hero-header__language" aria-label="Toggle language" (click)="locale.toggle()">
+    <div class="hero-header-language" aria-label="Toggle language" (click)="locale.toggle()">
       <button
-        class="hero-header__language-btn"
-        [class.hero-header__language-btn--active]="locale.current === 'en'"
+        class="hero-header-language-btn"
+        [class.hero-header-language-btn--active]="locale.current === 'en'"
         type="button"
       >EN</button>
-      <span class="hero-header__toggle" [class.hero-header__toggle--right]="locale.current === 'de'" aria-hidden="true">
-        <span class="hero-header__toggle-thumb"></span>
+      <span class="hero-header-toggle" [class.hero-header-toggle--right]="locale.current === 'de'" aria-hidden="true">
+        <span class="hero-header-toggle-thumb"></span>
       </span>
       <button
-        class="hero-header__language-btn"
-        [class.hero-header__language-btn--active]="locale.current === 'de'"
+        class="hero-header-language-btn"
+        [class.hero-header-language-btn--active]="locale.current === 'de'"
         type="button"
       >DE</button>
     </div>
 
-    <button class="hero-header__menu" type="button" aria-label="Menu" (click)="mobileNav.open()">
+    <button class="hero-header-menu" type="button" aria-label="Menu" (click)="mobileNav.open()">
       <img src="/assets/07_Header/default.webp" alt="" width="32" height="32" />
     </button>
   </div>
 </header>
 
 <div
-  class="hero-header__overlay"
-  [class.hero-header__overlay--open]="mobileNav.isOpen()"
+  class="hero-header-overlay"
+  [class.hero-header-overlay--open]="mobileNav.isOpen()"
   (click)="mobileNav.close()"
 >
   <app-mobile-menu (click)="$event.stopPropagation()"></app-mobile-menu>

@@ -1,6 +1,6 @@
 // Sticker-related styles extracted from skills.component.scss
 
-.skills__sticker {
+.skills-sticker {
   position: absolute;
   width: 200px;
   height: 200px;
@@ -12,7 +12,7 @@
   transition: transform 125ms ease;
 }
 
-.skills__sticker-layer {
+.skills-sticker-layer {
   position: absolute;
   inset: 0;
   width: 200px;
@@ -36,7 +36,7 @@
   }
 }
 
-.skills__sticker-overlay {
+.skills-sticker-overlay {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -52,13 +52,13 @@
   transition: opacity 125ms ease;
 }
 
-.skills__sticker-arrow {
+.skills-sticker-arrow {
   width: 51px;
   height: 40px;
   object-fit: contain;
 }
 
-.skills__sticker-text {
+.skills-sticker-text {
   font-family: 'Kalam', cursive;
   font-weight: 400;
   font-size: 40px;
@@ -67,7 +67,7 @@
   color: var(--color-white);
 }
 
-.skills__sticker-content {
+.skills-sticker-content {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -83,41 +83,41 @@
   transition: opacity 125ms ease 0.15s;
 }
 
-.skills__sticker--transition {
-  .skills__sticker-layer--default {
+.skills-sticker--transition {
+  .skills-sticker-layer--default {
     opacity: 0;
   }
 
-  .skills__sticker-layer--transition {
+  .skills-sticker-layer--transition {
     opacity: 1;
   }
 
-  .skills__sticker-overlay {
+  .skills-sticker-overlay {
     opacity: 0;
   }
 }
 
-.skills__sticker--final {
+.skills-sticker--final {
   transform: rotate(0deg);
 
-  .skills__sticker-layer--default {
+  .skills-sticker-layer--default {
     opacity: 0;
   }
 
-  .skills__sticker-layer--transition {
+  .skills-sticker-layer--transition {
     opacity: 0;
   }
 
-  .skills__sticker-overlay {
+  .skills-sticker-overlay {
     opacity: 0;
   }
 
-  .skills__sticker-content {
+  .skills-sticker-content {
     opacity: 1;
   }
 }
 
-.skills__sticker-heading {
+.skills-sticker-heading {
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -127,7 +127,7 @@
   width: 167px;
 }
 
-.skills__sticker-icons {
+.skills-sticker-icons {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -135,7 +135,7 @@
   gap: 16px;
 }
 
-.skills__sticker-icon-item {
+.skills-sticker-icon-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,7 +165,7 @@
 }
 
 @media (max-width: 1200px) {
-  .skills__sticker {
+  .skills-sticker {
     position: relative;
     right: auto;
     bottom: auto;

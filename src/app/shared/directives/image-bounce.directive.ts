@@ -14,7 +14,7 @@ export class ImageBounceDirective implements OnInit, OnDestroy {
     if (this.appImageBounce) {
       this.renderer.addClass(this.el.nativeElement, 'bounce-animation');
 
-      this.cardElement = this.el.nativeElement.closest('.showcase__card');
+      this.cardElement = this.el.nativeElement.closest('.showcase-card');
 
       if (this.cardElement) {
         this.cardElement.addEventListener('mouseenter', this.pauseAnimation);

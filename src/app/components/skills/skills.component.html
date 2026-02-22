@@ -1,57 +1,57 @@
 <section class="skills" id="skills">
-  <div class="skills__content">
-    <div class="skills__title-text">
-      <div class="skills__header">
-        <span class="skills__subtitle">{{ t('subtitle') }}</span>
-        <div class="skills__title-wrap">
+  <div class="skills-content">
+    <div class="skills-title-text">
+      <div class="skills-header">
+        <span class="skills-subtitle">{{ t('subtitle') }}</span>
+        <div class="skills-title-wrap">
           <img
-            class="skills__circle-line"
+            class="skills-circle-line"
             src="/assets/00_Hand-drawn lines/02_Skills/Color option 1.png"
             alt=""
             aria-hidden="true"
           />
-          <h2 class="skills__title">{{ t('title') }}</h2>
+          <h2 class="skills-title">{{ t('title') }}</h2>
         </div>
       </div>
 
-      <div class="skills__description">
+      <div class="skills-description">
         <img
-          class="skills__description-bg"
+          class="skills-description-bg"
           src="/assets/02_Ripped Paper/1.Skills description.png"
           alt=""
           aria-hidden="true"
         />
-        <p class="skills__description-text">{{ t('description') }}</p>
+        <p class="skills-description-text">{{ t('description') }}</p>
       </div>
     </div>
 
-    <div class="skills__logos">
+    <div class="skills-logos">
       @for (skill of skills; track skill.name) {
-        <div class="skills__logo-item">
-          <div class="skills__logo-icon">
+        <div class="skills-logo-item">
+          <div class="skills-logo-icon">
             <img [src]="skill.icon" [alt]="skill.name" />
           </div>
-          <span class="skills__logo-label">{{ skill.name }}</span>
+          <span class="skills-logo-label">{{ skill.name }}</span>
         </div>
       }
     </div>
   </div>
 
   <div
-    class="skills__sticker"
-    [class.skills__sticker--transition]="stickerState === 'transition'"
-    [class.skills__sticker--final]="stickerState === 'final'"
+    class="skills-sticker"
+    [class.skills-sticker--transition]="stickerState === 'transition'"
+    [class.skills-sticker--final]="stickerState === 'final'"
     (click)="peelSticker()"
   >
     <img
-      class="skills__sticker-layer skills__sticker-layer--final"
+      class="skills-sticker-layer skills-sticker-layer--final"
       src="/assets/03_Stickers/01_Skills - Peel off/Final.png"
       alt=""
     />
-    <div class="skills__sticker-content">
-      <span class="skills__sticker-heading">{{ t('stickerHeading') }}</span>
-      <div class="skills__sticker-icons">
-        <div class="skills__sticker-icon-item">
+    <div class="skills-sticker-content">
+      <span class="skills-sticker-heading">{{ t('stickerHeading') }}</span>
+      <div class="skills-sticker-icons">
+        <div class="skills-sticker-icon-item">
           <svg
             viewBox="-11.5 -10.232 23 20.463"
             width="40"
@@ -66,7 +66,7 @@
           </svg>
           <span>React</span>
         </div>
-        <div class="skills__sticker-icon-item">
+        <div class="skills-sticker-icon-item">
           <img
             src="/assets/05_Skills/vue_small.png"
             alt="Vue.js"
@@ -79,24 +79,24 @@
     </div>
 
     <img
-      class="skills__sticker-layer skills__sticker-layer--transition"
+      class="skills-sticker-layer skills-sticker-layer--transition"
       src="/assets/03_Stickers/01_Skills - Peel off/Transition.png"
       alt=""
     />
 
     <img
-      class="skills__sticker-layer skills__sticker-layer--default"
+      class="skills-sticker-layer skills-sticker-layer--default"
       src="/assets/03_Stickers/01_Skills - Peel off/Default.png"
       alt=""
     />
-    <div class="skills__sticker-overlay">
+    <div class="skills-sticker-overlay">
       <img
-        class="skills__sticker-arrow"
+        class="skills-sticker-arrow"
         src="/assets/03_Stickers/Arrow.png"
         alt=""
         aria-hidden="true"
       />
-      <span class="skills__sticker-text" [innerHTML]="t('stickerPull')"></span>
+      <span class="skills-sticker-text" [innerHTML]="t('stickerPull')"></span>
     </div>
   </div>
 </section>

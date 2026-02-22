@@ -11,7 +11,7 @@
   color: var(--color-white);
 }
 
-.reach-out__inner {
+.reach-out-inner {
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -21,7 +21,7 @@
 
 /* ── Left column ── */
 
-.reach-out__info {
+.reach-out-info {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -30,33 +30,33 @@
   flex-shrink: 0;
 }
 
-.reach-out__heading {
+.reach-out-heading {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.reach-out__label {
+.reach-out-label {
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
 }
 
-.reach-out__title {
+.reach-out-title {
   margin: 8px 0 0;
   font-weight: 700;
   font-size: 64px;
   line-height: 100%;
 }
 
-.reach-out__intro {
+.reach-out-intro {
   margin: 0;
   font-size: 18px;
   line-height: 30px;
   text-align: justify;
 }
 
-.reach-out__line {
+.reach-out-line {
   position: relative;
   height: 41px;
   width: 280px;
@@ -84,18 +84,18 @@
 
 /* ── Sticker circle ── */
 
-.reach-out__sticker {
+.reach-out-sticker {
   position: absolute;
   z-index: 100;
   transform: rotate(15deg) scale(0.85);
 }
 
-.reach-out__sticker--desktop {
+.reach-out-sticker--desktop {
   right: -10px;
   top: -40px;
 }
 
-.reach-out__sticker--mobile {
+.reach-out-sticker--mobile {
   display: none;
   position: unset;
   width: fit-content;
@@ -104,19 +104,19 @@
 
 /* ── Right column (form wrapper) ── */
 
-.reach-out__form-wrap {
+.reach-out-form-wrap {
   position: relative;
   flex-shrink: 0;
 }
 
-.reach-out__form {
+.reach-out-form {
   display: flex;
   flex-direction: column;
   width: 480px;
   padding-top: 55px;
 }
 
-.reach-out__field {
+.reach-out-field {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -160,7 +160,7 @@
   }
 }
 
-.reach-out__field:has(+ .reach-out__field:hover) {
+.reach-out-field:has(+ .reach-out-field:hover) {
   border-bottom-color: transparent;
 }
 
@@ -170,13 +170,13 @@ textarea:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.reach-out__error {
+.reach-out-error {
   color: #FF3A00;
   font-size: 14px;
   padding-left: 16px;
 }
 
-.reach-out__policy {
+.reach-out-policy {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -193,7 +193,7 @@ textarea:-webkit-autofill {
   }
 }
 
-.reach-out__checkbox {
+.reach-out-checkbox {
   cursor: pointer;
   flex-shrink: 0;
 
@@ -208,13 +208,13 @@ textarea:-webkit-autofill {
   }
 }
 
-.reach-out__actions {
+.reach-out-actions {
   display: flex;
   justify-content: flex-end;
   padding-top: 28px;
 }
 
-.reach-out__submit {
+.reach-out-submit {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -243,7 +243,7 @@ textarea:-webkit-autofill {
   }
 }
 
-.reach-out__msg {
+.reach-out-msg {
   margin-top: 16px;
   padding: 8px 16px;
   border-radius: 20px;
@@ -265,30 +265,30 @@ textarea:-webkit-autofill {
 
 /* ── Responsive ── */
 @media (max-width: 1200px) {
-  .reach-out__inner {
+  .reach-out-inner {
     flex-direction: column;
     align-items: center;
   }
 
-  .reach-out__info {
+  .reach-out-info {
     width: 100%;
     max-width: 480px;
   }
 
-  .reach-out__form {
+  .reach-out-form {
     width: 100%;
     max-width: 480px;
   }
 
-  .reach-out__line {
+  .reach-out-line {
     display: none;
   }
 
-  .reach-out__sticker--desktop {
+  .reach-out-sticker--desktop {
     display: none;
   }
 
-  .reach-out__sticker--mobile {
+  .reach-out-sticker--mobile {
     display: block;
   }
 }
@@ -298,32 +298,32 @@ textarea:-webkit-autofill {
     padding: 88px 16px 40px;
   }
 
-  .reach-out__info {
+  .reach-out-info {
     max-width: 400px;
   }
 
-  .reach-out__title {
+  .reach-out-title {
     font-size: 40px;
   }
 
-  .reach-out__field label {
+  .reach-out-field label {
     font-size: 20px;
   }
 
-  .reach-out__field input,
-  .reach-out__field textarea,
-  .reach-out__field input::placeholder,
-  .reach-out__field textarea::placeholder {
+  .reach-out-field input,
+  .reach-out-field textarea,
+  .reach-out-field input::placeholder,
+  .reach-out-field textarea::placeholder {
     font-size: 16px;
   }
 }
 
 @media (max-width: 410px) {
-  .reach-out__info {
+  .reach-out-info {
     max-width: 270px;
   }
 
-  .reach-out__title {
+  .reach-out-title {
     font-size: 32px;
   }
 }

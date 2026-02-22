@@ -15,7 +15,7 @@
   color: var(--color-black);
 }
 
-.about__location {
+.about-location {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -23,7 +23,7 @@
   flex-shrink: 0;
 }
 
-.about__card {
+.about-card {
   position: relative;
   width: 560px;
   height: 152px;
@@ -46,7 +46,7 @@
   }
 }
 
-.about__card-bg {
+.about-card-bg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -55,7 +55,7 @@
   pointer-events: none;
 }
 
-.about__card-content {
+.about-card-content {
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -67,13 +67,13 @@
   white-space: nowrap;
 }
 
-.about__card-icon {
+.about-card-icon {
   width: 40px;
   height: 40px;
   flex-shrink: 0;
 }
 
-.about__card-label {
+.about-card-label {
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 400;
   font-size: 24px;
@@ -81,7 +81,7 @@
   color: var(--color-white);
 }
 
-.about__content {
+.about-content {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -90,7 +90,7 @@
   flex-shrink: 0;
 }
 
-.about__header {
+.about-header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -98,7 +98,7 @@
   width: 100%;
 }
 
-.about__subtitle {
+.about-subtitle {
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 500;
   font-size: 20px;
@@ -107,14 +107,14 @@
   color: var(--color-black);
 }
 
-.about__title-wrap {
+.about-title-wrap {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
 }
 
-.about__title {
+.about-title {
   margin: 0;
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 700;
@@ -141,7 +141,7 @@
   }
 }
 
-.about__blueline {
+.about-blueline {
   width: 303px;
   height: 20px;
   overflow: hidden;
@@ -155,7 +155,7 @@
   }
 }
 
-.about__text {
+.about-text {
   margin: 0;
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 400;
@@ -165,7 +165,7 @@
   width: 100%;
 }
 
-.about__cta {
+.about-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -208,12 +208,12 @@
     min-height: auto;
   }
 
-  .about__location {
+  .about-location {
     width: 100%;
     max-width: 560px;
   }
 
-  .about__content {
+  .about-content {
     width: 100%;
     max-width: 560px;
   }
@@ -234,39 +234,39 @@
     min-height: auto;
   }
 
-  .about__content {
+  .about-content {
     order: 0;
     width: 100%;
     gap: 32px;
   }
 
-  .about__location {
+  .about-location {
     order: 1;
     width: 100%;
   }
 
-  .about__subtitle {
+  .about-subtitle {
     font-size: 18px;
   }
 
-  .about__title {
+  .about-title {
     font-size: 48px;
   }
 
-  .about__blueline {
+  .about-blueline {
     width: 227px;
   }
 
-  .about__text {
+  .about-text {
     font-size: 18px;
     line-height: 22px;
   }
 
-  .about__cta {
+  .about-cta {
     font-size: 18px;
   }
 
-  .about__card {
+  .about-card {
     width: 100%;
     height: 128px;
 
@@ -279,7 +279,7 @@
     }
   }
 
-  .about__card-label {
+  .about-card-label {
     font-size: 20px;
   }
 }

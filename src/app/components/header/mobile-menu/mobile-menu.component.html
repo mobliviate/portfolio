@@ -1,40 +1,40 @@
 <section class="overlay-menu">
-  <div class="overlay-menu__top">
-    <a class="overlay-menu__logo" routerLink="/" (click)="nav.close()">MO</a>
-    <button class="overlay-menu__close" (click)="nav.close()" aria-label="Close menu">
+  <div class="overlay-menu-top">
+    <a class="overlay-menu-logo" routerLink="/" (click)="nav.close()">MO</a>
+    <button class="overlay-menu-close" (click)="nav.close()" aria-label="Close menu">
       <img src="/assets/07_Header/close.webp" alt="" width="32" height="32" />
     </button>
   </div>
 
-  <nav class="overlay-menu__nav">
-    <a class="overlay-menu__item" (click)="goTo('about')">{{ t('about') }}</a>
-    <a class="overlay-menu__item" (click)="goTo('skills')">{{ t('skills') }}</a>
-    <a class="overlay-menu__item" (click)="goTo('projects')">{{ t('projects') }}</a>
-    <a class="overlay-menu__item" (click)="goTo('contact')">{{ t('contact') }}</a>
+  <nav class="overlay-menu-nav">
+    <a class="overlay-menu-item" (click)="goTo('about')">{{ t('about') }}</a>
+    <a class="overlay-menu-item" (click)="goTo('skills')">{{ t('skills') }}</a>
+    <a class="overlay-menu-item" (click)="goTo('projects')">{{ t('projects') }}</a>
+    <a class="overlay-menu-item" (click)="goTo('contact')">{{ t('contact') }}</a>
   </nav>
 
-  <div class="overlay-menu__lang">
+  <div class="overlay-menu-lang">
     <button
-      class="overlay-menu__lang-btn"
-      [class.overlay-menu__lang-btn--active]="locale.current === 'en'"
+      class="overlay-menu-lang-btn"
+      [class.overlay-menu-lang-btn--active]="locale.current === 'en'"
       (click)="locale.set('en')"
     >EN</button>
-    <span class="overlay-menu__lang-sep">|</span>
+    <span class="overlay-menu-lang-sep">|</span>
     <button
-      class="overlay-menu__lang-btn"
-      [class.overlay-menu__lang-btn--active]="locale.current === 'de'"
+      class="overlay-menu-lang-btn"
+      [class.overlay-menu-lang-btn--active]="locale.current === 'de'"
       (click)="locale.set('de')"
     >DE</button>
   </div>
 
-  <div class="overlay-menu__socials">
-    <a class="overlay-menu__social" href="https://www.linkedin.com/in/odermattli/" target="_blank" rel="noopener" aria-label="LinkedIn">
+  <div class="overlay-menu-socials">
+    <a class="overlay-menu-social" href="https://www.linkedin.com/in/odermattli/" target="_blank" rel="noopener" aria-label="LinkedIn">
       <img src="/assets/03_Stickers/Linkedin.png" alt="" width="32" height="32" />
     </a>
-    <a class="overlay-menu__social" href="https://github.com/mobliviate" target="_blank" rel="noopener" aria-label="GitHub">
+    <a class="overlay-menu-social" href="https://github.com/mobliviate" target="_blank" rel="noopener" aria-label="GitHub">
       <img src="/assets/03_Stickers/Github.png" alt="" width="32" height="32" />
     </a>
-    <a class="overlay-menu__social" href="mailto:info@marcodermatt.ch" aria-label="E-Mail">
+    <a class="overlay-menu-social" href="mailto:info@marcodermatt.ch" aria-label="E-Mail">
       <img src="/assets/03_Stickers/mail.png" alt="" width="32" height="32" />
     </a>
   </div>

@@ -10,7 +10,7 @@
   }
 }
 
-.circle-sticker__content {
+.circle-sticker-content {
   width: 168px;
   height: 168px;
   position: absolute;
@@ -18,13 +18,13 @@
   justify-content: center;
   align-items: center;
 
-  .circle-sticker__center {
+  .circle-sticker-center {
     position: absolute;
     display: block;
     height: auto;
   }
 
-  .circle-sticker__logo-text {
+  .circle-sticker-logo-text {
     position: absolute;
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
@@ -48,16 +48,16 @@
     }
   }
 
-  .circle-sticker__content {
+  .circle-sticker-content {
     width: 120px;
     height: 120px;
 
-    .circle-sticker__center {
+    .circle-sticker-center {
       width: 50px;
       height: auto;
     }
 
-    .circle-sticker__logo-text {
+    .circle-sticker-logo-text {
       font-size: 20px;
     }
 

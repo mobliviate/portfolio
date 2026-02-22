@@ -43,7 +43,7 @@
   justify-content: center;
 }
 
-.site-footer__inner {
+.site-footer-inner {
   width: 100%;
   max-width: 1440px;
   margin: 0 clamp(16px, 5vw, 120px);
@@ -53,13 +53,13 @@
   color: var(--footer-color, var(--color-white));
 }
 
-.site-footer__brand {
+.site-footer-brand {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.site-footer__logo {
+.site-footer-logo {
   text-decoration: none;
   font-weight: 700;
   font-size: 32px;
@@ -72,12 +72,12 @@
   }
 }
 
-.site-footer__copy {
+.site-footer-copy {
   font-size: 18px;
   font-weight: 700;
 }
 
-.site-footer__links {
+.site-footer-links {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -189,13 +189,13 @@
 }
 
 @media (max-width: 1024px) {
-  .site-footer__brand {
+  .site-footer-brand {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 
-  .site-footer__links {
+  .site-footer-links {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -230,7 +230,7 @@
 }
 
 @media (max-width: 375px) {
-  .site-footer__links {
+  .site-footer-links {
     grid-template-areas:
       "imprint . privacy"
       "github linkedin email";

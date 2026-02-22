@@ -1,7 +1,7 @@
 <section class="hero" id="home">
-  <aside class="hero__socials" aria-label="Social links">
+  <aside class="hero-socials" aria-label="Social links">
     <a
-      class="hero__social-link"
+      class="hero-social-link"
       href="https://www.linkedin.com/in/odermattli/"
       target="_blank"
       rel="noreferrer noopener"
@@ -10,7 +10,7 @@
       <img src="/assets/03_Stickers/Linkedin.png" alt="" width="32" height="32" aria-hidden="true" />
     </a>
     <a
-      class="hero__social-link"
+      class="hero-social-link"
       href="https://github.com/mobliviate"
       target="_blank"
       rel="noreferrer noopener"
@@ -18,49 +18,49 @@
     >
       <img src="/assets/03_Stickers/Github.png" alt="" width="32" height="32" aria-hidden="true" />
     </a>
-    <a class="hero__social-link" href="mailto:info@marcodermatt.ch" aria-label="E-Mail">
+    <a class="hero-social-link" href="mailto:info@marcodermatt.ch" aria-label="E-Mail">
       <img src="/assets/03_Stickers/mail.png" alt="" width="32" height="32" aria-hidden="true" />
     </a>
   </aside>
 
-  <div class="hero__layout">
-    <div class="hero__content">
-      <span class="hero__badge">
-        <span class="hero__badge-default">{{ t('badge') }}</span>
-        <span class="hero__badge-hover">{{ t('badgeHover') }}</span>
+  <div class="hero-layout">
+    <div class="hero-content">
+      <span class="hero-badge">
+        <span class="hero-badge-default">{{ t('badge') }}</span>
+        <span class="hero-badge-hover">{{ t('badgeHover') }}</span>
         <img
-          class="hero__badge-hand"
+          class="hero-badge-hand"
           src="/assets/03_Stickers/waving_hand.png"
           alt=""
           aria-hidden="true"
         />
       </span>
-      <h1 class="hero__headline">
-        <span class="hero__headline-primary">
-          <span class="hero__letter hero__letter--upper">F</span><span class="hero__letter hero__letter--lower">r</span><span class="hero__letter hero__letter--lower">o</span><span class="hero__letter hero__letter--lower">n</span><span class="hero__letter hero__letter--lower">t</span><span class="hero__letter hero__letter--lower">e</span><span class="hero__letter hero__letter--lower">n</span><span class="hero__letter hero__letter--lower">d</span>
+      <h1 class="hero-headline">
+        <span class="hero-headline-primary">
+          <span class="hero-letter hero-letter--upper">F</span><span class="hero-letter hero-letter--lower">r</span><span class="hero-letter hero-letter--lower">o</span><span class="hero-letter hero-letter--lower">n</span><span class="hero-letter hero-letter--lower">t</span><span class="hero-letter hero-letter--lower">e</span><span class="hero-letter hero-letter--lower">n</span><span class="hero-letter hero-letter--lower">d</span>
         </span>
-        <span class="hero__headline-secondary">
+        <span class="hero-headline-secondary">
           @for (letter of secondaryLetters; track $index) {
-            <span class="hero__letter hero__letter--upper">{{ letter }}</span>
+            <span class="hero-letter hero-letter--upper">{{ letter }}</span>
           }
         </span>
       </h1>
-      <a class="hero__cta" (click)="scrollToContact()" role="button">{{ t('cta') }}</a>
+      <a class="hero-cta" (click)="scrollToContact()" role="button">{{ t('cta') }}</a>
     </div>
 
-    <figure class="hero__polaroid" aria-labelledby="hero-polaroid-caption">
-      <span class="hero__photo" aria-hidden="true"></span>
+    <figure class="hero-polaroid" aria-labelledby="hero-polaroid-caption">
+      <span class="hero-photo" aria-hidden="true"></span>
       <img
-        class="hero__frame"
+        class="hero-frame"
         src="/assets/03_Stickers/Polaroid Frame.png"
         alt=""
         width="204"
         height="244"
         loading="lazy"
       />
-      <figcaption class="hero__caption" id="hero-polaroid-caption">
-        <span class="hero__caption-default">Marc :)</span>
-        <span class="hero__caption-hover">Marc :D</span>
+      <figcaption class="hero-caption" id="hero-polaroid-caption">
+        <span class="hero-caption-default">Marc :)</span>
+        <span class="hero-caption-hover">Marc :D</span>
       </figcaption>
     </figure>
   </div>

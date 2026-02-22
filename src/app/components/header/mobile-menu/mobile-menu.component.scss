@@ -10,7 +10,7 @@
   overflow-y: auto;
 }
 
-.overlay-menu__top {
+.overlay-menu-top {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -18,7 +18,7 @@
   padding: 16px 24px;
 }
 
-.overlay-menu__logo {
+.overlay-menu-logo {
   font-weight: 700;
   font-size: 28px;
   letter-spacing: -0.06em;
@@ -31,7 +31,7 @@
   }
 }
 
-.overlay-menu__close {
+.overlay-menu-close {
   background: none;
   border: none;
   cursor: pointer;
@@ -46,7 +46,7 @@
   }
 }
 
-.overlay-menu__nav {
+.overlay-menu-nav {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,7 +54,7 @@
   margin-top: 64px;
 }
 
-.overlay-menu__item {
+.overlay-menu-item {
   font-size: 28px;
   font-weight: 600;
   text-decoration: none;
@@ -67,14 +67,14 @@
   }
 }
 
-.overlay-menu__lang {
+.overlay-menu-lang {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 40px;
 }
 
-.overlay-menu__lang-btn {
+.overlay-menu-lang-btn {
   background: none;
   border: none;
   font-family: inherit;
@@ -89,17 +89,17 @@
   }
 }
 
-.overlay-menu__lang-sep {
+.overlay-menu-lang-sep {
   color: rgba(var(--color-white-rgb), 0.3);
 }
 
-.overlay-menu__socials {
+.overlay-menu-socials {
   display: flex;
   gap: 12px;
   margin-top: 48px;
 }
 
-.overlay-menu__social {
+.overlay-menu-social {
   display: inline-flex;
   align-items: center;
   justify-content: center;
