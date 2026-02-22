@@ -22,7 +22,7 @@
           height="40"
           aria-hidden="true"
         />
-        <span class="about__card-label">Based in Emmetten</span>
+        <span class="about__card-label">{{ t('location') }}</span>
       </div>
     </div>
 
@@ -48,7 +48,7 @@
           height="40"
           aria-hidden="true"
         />
-        <span class="about__card-label">Open to relocate</span>
+        <span class="about__card-label">{{ t('relocate') }}</span>
       </div>
     </div>
 
@@ -74,16 +74,16 @@
           height="40"
           aria-hidden="true"
         />
-        <span class="about__card-label">Open to work remote</span>
+        <span class="about__card-label">{{ t('remote') }}</span>
       </div>
     </div>
   </div>
 
   <div class="about__content">
     <div class="about__header">
-      <span class="about__subtitle">WHO'S MARC?</span>
+      <span class="about__subtitle">{{ t('subtitle') }}</span>
       <div class="about__title-wrap">
-        <h2 class="about__title">About me</h2>
+        <h2 class="about__title">{{ t('title') }}</h2>
         <div class="about__blueline">
           <img src="/assets/04_About_me/Blue line.png" alt="" />
         </div>
@@ -91,11 +91,11 @@
     </div>
 
     <p class="about__text">
-      Hey there, I'm Marc. I'm a passionate software engineer with a strong focus on front-end development. I enjoy creating intuitive, visually appealing interfaces using Angular and modern web technologies. My fascination with coding started at an early age, driven by the endless possibilities to build and solve problems creatively. I thrive on challenges that push me to find not just functional but elegant solutions, constantly learning new concepts and sharing ideas with other developers. Continuous improvement and curiosity keep me motivated every day in the world of IT.
+      {{ t('text') }}
       <br /><br />
-      Let's collaborate and build something remarkable together!
+      {{ t('textSuffix') }}
     </p>
 
-    <a class="about__cta" href="#contact">Let's talk</a>
+    <a class="about__cta" (click)="scrollToContact()" role="button">{{ t('cta') }}</a>
   </div>
 </section>

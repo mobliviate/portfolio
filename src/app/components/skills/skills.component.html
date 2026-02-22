@@ -4,7 +4,7 @@
     <div class="skills__title-text">
       <!-- Left: Title area -->
       <div class="skills__header">
-        <span class="skills__subtitle">MY STACK</span>
+        <span class="skills__subtitle">{{ t('subtitle') }}</span>
         <div class="skills__title-wrap">
           <img
             class="skills__circle-line"
@@ -12,7 +12,7 @@
             alt=""
             aria-hidden="true"
           />
-          <h2 class="skills__title">Skill set</h2>
+          <h2 class="skills__title">{{ t('title') }}</h2>
         </div>
       </div>
 
@@ -24,11 +24,7 @@
           alt=""
           aria-hidden="true"
         />
-        <p class="skills__description-text">
-          A short introduction of your skills. Highlight your experience of
-          using different front-end technologies and emphasise your openness
-          to learning and adapting to new technologies.
-        </p>
+        <p class="skills__description-text">{{ t('description') }}</p>
       </div>
     </div>
 
@@ -59,9 +55,7 @@
       alt=""
     />
     <div class="skills__sticker-content">
-      <span class="skills__sticker-heading"
-        >Also, I'm interested in diving into:</span
-      >
+      <span class="skills__sticker-heading">{{ t('stickerHeading') }}</span>
       <div class="skills__sticker-icons">
         <div class="skills__sticker-icon-item">
           <svg
@@ -110,7 +104,7 @@
         alt=""
         aria-hidden="true"
       />
-      <span class="skills__sticker-text">Pull to<br />peel</span>
+      <span class="skills__sticker-text" [innerHTML]="t('stickerPull')"></span>
     </div>
   </div>
 </section>

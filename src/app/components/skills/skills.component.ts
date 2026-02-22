@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LocaleService } from '../../shared/services/locale.service';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
   imports: [],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss'
+  styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
+  locale = inject(LocaleService);
   stickerState: 'default' | 'transition' | 'final' = 'default';
 
   skills = [
@@ -22,6 +24,24 @@ export class SkillsComponent {
     { name: 'Scrum', icon: '/assets/05_Skills/Scrum.png' },
     { name: 'Material Design', icon: '/assets/05_Skills/Material Design.png' },
   ];
+
+  labels: Record<string, Record<string, string>> = {
+    subtitle: { en: 'MY STACK', de: 'MEIN STACK' },
+    title: { en: 'Skill set', de: 'Fähigkeiten' },
+    description: {
+      en: 'A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies.',
+      de: 'Ich habe Erfahrung im Aufbau von Projekten mit verschiedenen Frontend-Technologien und Konzepten. Ich bin stets offen, neue Technologien zu erlernen und mich an sie anzupassen.',
+    },
+    stickerHeading: {
+      en: 'Also, I\'m interested in diving into:',
+      de: 'Ausserdem interessiere ich mich für:',
+    },
+    stickerPull: { en: 'Pull to<br>peel', de: 'Ziehen zum<br>abziehen' },
+  };
+
+  t(key: string): string {
+    return this.labels[key]?.[this.locale.current] ?? '';
+  }
 
   peelSticker(): void {
     if (this.stickerState === 'default') {

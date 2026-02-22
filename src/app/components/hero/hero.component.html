@@ -26,8 +26,8 @@
   <div class="hero__layout">
     <div class="hero__content">
       <span class="hero__badge">
-        <span class="hero__badge-default">Hello world</span>
-        <span class="hero__badge-hover">I'M MARC ODERMATT</span>
+        <span class="hero__badge-default">{{ t('badge') }}</span>
+        <span class="hero__badge-hover">{{ t('badgeHover') }}</span>
         <img
           class="hero__badge-hand"
           src="/assets/03_Stickers/waving_hand.png"
@@ -40,10 +40,12 @@
           <span class="hero__letter hero__letter--upper">F</span><span class="hero__letter hero__letter--lower">r</span><span class="hero__letter hero__letter--lower">o</span><span class="hero__letter hero__letter--lower">n</span><span class="hero__letter hero__letter--lower">t</span><span class="hero__letter hero__letter--lower">e</span><span class="hero__letter hero__letter--lower">n</span><span class="hero__letter hero__letter--lower">d</span>
         </span>
         <span class="hero__headline-secondary">
-          <span class="hero__letter hero__letter--upper">D</span><span class="hero__letter hero__letter--upper">E</span><span class="hero__letter hero__letter--upper">V</span><span class="hero__letter hero__letter--upper">E</span><span class="hero__letter hero__letter--upper">L</span><span class="hero__letter hero__letter--upper">O</span><span class="hero__letter hero__letter--upper">P</span><span class="hero__letter hero__letter--upper">E</span><span class="hero__letter hero__letter--upper">R</span>
+          @for (letter of secondaryLetters; track $index) {
+            <span class="hero__letter hero__letter--upper">{{ letter }}</span>
+          }
         </span>
       </h1>
-      <a class="hero__cta" href="#contact">Get in Touch</a>
+      <a class="hero__cta" (click)="scrollToContact()" role="button">{{ t('cta') }}</a>
     </div>
 
     <figure class="hero__polaroid" aria-labelledby="hero-polaroid-caption">
