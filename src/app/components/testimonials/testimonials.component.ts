@@ -27,7 +27,7 @@ export class TestimonialsComponent {
   reviews: Review[] = [
     {
       author: 'Anna Müller',
-      role: { en: 'Team Lead at DevCorp', de: 'Teamleiterin bei DevCorp' },
+      role: { en: 'Team Lead at softli.ch', de: 'Teamleiterin bei softli.ch' },
       quote: {
         en: 'Marc is a talented developer who delivers clean, well-structured code. His attention to detail and dedication to quality made a real difference in our project.',
         de: 'Marc ist ein talentierter Entwickler, der sauberen, gut strukturierten Code liefert. Seine Liebe zum Detail und sein Qualitätsanspruch haben unser Projekt wirklich bereichert.',
@@ -36,7 +36,7 @@ export class TestimonialsComponent {
     },
     {
       author: 'Thomas Weber',
-      role: { en: 'Product Owner at StartupXYZ', de: 'Product Owner bei StartupXYZ' },
+      role: { en: 'Product Owner at softli.ch', de: 'Product Owner bei softli.ch' },
       quote: {
         en: 'Working with Marc was a great experience. He understood our requirements quickly and implemented them with creativity and precision.',
         de: 'Die Zusammenarbeit mit Marc war grossartig. Er hat unsere Anforderungen schnell verstanden und mit Kreativität und Präzision umgesetzt.',
