@@ -40,6 +40,10 @@
   img {
     display: block;
   }
+
+  &:hover img {
+    content: url('/assets/07_Header/close_hover.webp');
+  }
 }
 
 .overlay-menu__nav {

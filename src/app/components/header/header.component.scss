@@ -210,6 +210,12 @@
   }
 }
 
+@media (pointer: fine) {
+  .hero-header__menu:hover img {
+    content: url('/assets/07_Header/hover.webp');
+  }
+}
+
 /* ── Mobile Menu Overlay ── */
 .hero-header__overlay {
   position: fixed;
