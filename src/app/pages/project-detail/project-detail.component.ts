@@ -4,12 +4,13 @@ import { ViewportScroller } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { LocaleService } from '../../shared/services/locale.service';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
+import { StickerCircleComponent } from '../../shared/sticker-circle/sticker-circle.component';
 import { PROJECTS, ProjectDetail } from '../../shared/data/projects.data';
 
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [RouterLink, ScrollRevealDirective],
+  imports: [RouterLink, ScrollRevealDirective, StickerCircleComponent],
   templateUrl: './project-detail.component.html',
   styleUrl: './project-detail.component.scss',
 })

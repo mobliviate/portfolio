@@ -2,13 +2,14 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LocaleService } from '../../shared/services/locale.service';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
+import { ImageBounceDirective } from '../../shared/directives/image-bounce.directive';
 import { StickerCircleComponent } from '../../shared/sticker-circle/sticker-circle.component';
 import { PROJECTS, ProjectDetail } from '../../shared/data/projects.data';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ScrollRevealDirective, RouterLink, StickerCircleComponent],
+  imports: [ScrollRevealDirective, ImageBounceDirective, RouterLink, StickerCircleComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })

@@ -1,37 +1,50 @@
 :host {
   display: block;
-  min-height: 100vh;
-  background-color: var(--color-black-deep);
-  color: var(--color-white);
 }
 
-.proj-detail {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 110px clamp(16px, 5vw, 120px) 60px;
+.section-bg {
+  background-image: url('/assets/01_Background/Design Size Relation@3x/07_project_details.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #1a1a1a;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.proj-detail__container {
   display: flex;
   flex-direction: column;
+  max-width: 1440px;
+  width: 100%;
+  padding: 110px clamp(16px, 5vw, 120px) 60px;
+  position: relative;
 }
 
 /* ── Back link ── */
-.proj-detail__back {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-white);
-  text-decoration: none;
-  cursor: pointer;
-  margin-bottom: 40px;
-  transition: color 0.2s;
-
-  img {
-    filter: brightness(0) invert(1);
+.arrow-back-container {
+  a {
+    text-decoration: none;
   }
 
-  &:hover {
-    color: var(--color-highlight-3);
+  .arrow-back {
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      color: var(--color-highlight-3);
+    }
   }
 }
 
@@ -39,17 +52,21 @@
 .proj-detail__body {
   display: flex;
   justify-content: space-between;
-  gap: 64px;
+  padding: 0 50px;
 }
 
 .proj-detail__info {
+  width: 488px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  max-width: 520px;
+  gap: 48px;
+  margin-bottom: 40px;
 }
 
 .proj-detail__headline {
+  width: fit-content;
+  min-width: 120px;
+
   h1 {
     margin: 0;
     font-size: 64px;
@@ -61,7 +78,6 @@
 .proj-detail__drawline {
   position: relative;
   height: 25px;
-  margin-top: 4px;
 
   &::after {
     content: '';
@@ -86,7 +102,7 @@
 
 .proj-detail__section {
   h2 {
-    margin: 0 0 12px;
+    margin: 0 0 16px;
     font-size: 28px;
     font-weight: 700;
   }
@@ -100,21 +116,23 @@
 }
 
 .proj-detail__duration {
-  font-size: 20px;
-  line-height: 30px;
+  p {
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0;
+  }
 }
 
 /* ── Skills row ── */
 .proj-detail__skills {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
 
 .proj-detail__skill {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 
   img {
     width: 32px;
@@ -122,36 +140,38 @@
     object-fit: contain;
   }
 
-  span {
+  p {
     font-size: 18px;
+    margin: 0;
   }
 }
 
-/* ── Project image ── */
+/* ── Project image + sticker ── */
 .proj-detail__visual {
-  flex-shrink: 0;
-  display: flex;
-  align-items: flex-start;
-  padding-top: 24px;
+  position: relative;
+  padding-top: 25px;
+
+  .proj-detail__image {
+    border-radius: 20px;
+  }
 }
 
-.proj-detail__image {
-  width: 440px;
-  border-radius: 20px;
-  object-fit: contain;
+.sticker-container {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
 }
 
 /* ── Actions (bottom) ── */
 .proj-detail__actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 48px;
+  position: relative;
 }
 
 .proj-detail__buttons {
   display: flex;
-  gap: 24px;
+  justify-content: flex-end;
+  gap: 32px;
 }
 
 .proj-detail__btn {
@@ -175,19 +195,22 @@
   }
 }
 
-.proj-detail__next {
-  display: inline-flex;
+.arrow-next {
+  display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: flex-end;
+  gap: 8px;
   font-size: 20px;
   font-weight: 700;
   color: var(--color-white);
-  text-decoration: none;
   cursor: pointer;
   transition: color 0.2s;
 
+  p { margin: 0; }
+
   img {
-    filter: brightness(0) invert(1);
+    width: 24px;
+    height: 24px;
   }
 
   &:hover {
@@ -195,58 +218,128 @@
   }
 }
 
+.blend-diff {
+  color: var(--color-white);
+  mix-blend-mode: difference !important;
+}
+
 /* ── Responsive ── */
-@media (max-width: 1100px) {
-  .proj-detail__body {
-    flex-direction: column;
-    align-items: center;
+@media (max-height: 950px) and (min-width: 1351px) {
+  .proj-detail__container {
+    padding-top: 55px;
   }
 
   .proj-detail__info {
-    max-width: 100%;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1350px) {
+  .proj-detail__body {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
   }
 
-  .proj-detail__visual {
-    padding-top: 0;
+  .description-project,
+  .description-process,
+  .duration,
+  .project-skills {
+    mix-blend-mode: difference !important;
+
+    p, h2, strong {
+      color: var(--color-white);
+    }
   }
 
-  .proj-detail__image {
+  .proj-detail__info {
+    gap: 30px;
     width: 100%;
     max-width: 520px;
   }
 
+  .proj-detail__visual {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  .sticker-container {
+    top: 55%;
+  }
+
+  .section-bg {
+    background-image: url('/assets/01_Background/Design Size Relation@3x/07_project_details_rotate.png');
+    background-position-y: bottom;
+  }
+
   .proj-detail__actions {
-    flex-direction: column;
-    gap: 24px;
-    align-items: flex-start;
+    position: unset;
+
+    .proj-detail__buttons {
+      padding-top: 0;
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .proj-detail__visual img {
+    width: 400px;
+  }
+
+  .proj-detail__info {
+    width: unset;
+  }
+}
+
+@media (max-width: 610px) {
+  .sticker-container {
+    bottom: 85px;
+    right: 5px;
+    top: unset;
+    transform: unset;
   }
 }
 
 @media (max-width: 500px) {
-  .proj-detail {
-    padding-top: 80px;
-  }
+  .proj-detail__info {
+    width: 340px;
 
-  .proj-detail__headline h1 {
-    font-size: 40px;
-  }
-
-  .proj-detail__section {
-    h2 { font-size: 24px; }
-    p  { font-size: 18px; }
-  }
-
-  .proj-detail__image {
-    max-width: 100%;
+    p {
+      font-size: 18px;
+      height: fit-content;
+    }
   }
 
   .proj-detail__skills {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+    align-self: center;
+  }
+
+  .proj-detail__visual img {
+    width: 310px;
   }
 
   .proj-detail__buttons {
-    gap: 12px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 370px) {
+  .proj-detail__info {
+    width: 290px;
+
+    h2 { font-size: 24px; }
+    p  { font-size: 16px; }
+  }
+
+  .proj-detail__visual img {
+    width: 290px;
+  }
+
+  .proj-detail__buttons {
+    gap: 15px;
   }
 }

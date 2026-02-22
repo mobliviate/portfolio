@@ -1,63 +1,69 @@
-<section class="proj-detail">
+<section class="section-bg">
   <div class="proj-detail__container">
 
-    <!-- Back link -->
-    <a class="proj-detail__back" (click)="goBackToOverview()">
-      <img src="/assets/00_Hand-drawn lines/03_Portfolio/Breadcrumbs/Breadcrumb arrow 1.png" alt="" width="24" height="24" />
-      <span>{{ t('back') }}</span>
-    </a>
+    <div class="arrow-back-container">
+      <a (click)="goBackToOverview()">
+        <div class="arrow-back">
+          <img src="/assets/00_Hand-drawn lines/03_Portfolio/Breadcrumbs/Breadcrumb arrow 1.png" alt="" />
+          <p>{{ t('back') }}</p>
+        </div>
+      </a>
+    </div>
 
     <div class="proj-detail__body">
-      <!-- Left: text content -->
       <div class="proj-detail__info">
         <div class="proj-detail__headline">
           <h1>{{ project.title }}</h1>
           <div class="proj-detail__drawline" appScrollReveal [revealDelay]="200"></div>
         </div>
 
-        <div class="proj-detail__section">
+        <div class="proj-detail__section description-project">
           <h2>{{ t('descTitle') }}</h2>
           <p>{{ project.description[locale.current] }}</p>
         </div>
 
-        <div class="proj-detail__section">
+        <div class="proj-detail__section description-process">
           <h2>{{ t('processTitle') }}</h2>
           <p>{{ project.process[locale.current] }}</p>
         </div>
 
-        <div class="proj-detail__duration">
-          <strong>{{ t('durationLabel') }}:</strong> {{ project.duration[locale.current] }}
+        <div class="proj-detail__duration duration">
+          <p><strong>{{ t('durationLabel') }}:</strong> {{ project.duration[locale.current] }}</p>
         </div>
 
-        <div class="proj-detail__skills">
+        <div class="proj-detail__skills project-skills">
           @for (skill of project.skills; track skill.name) {
             <div class="proj-detail__skill">
               <img [src]="skill.icon" [alt]="skill.name" width="32" height="32" />
-              <span>{{ skill.name }}</span>
+              <p>{{ skill.name }}</p>
             </div>
           }
         </div>
       </div>
 
-      <!-- Right: visual -->
       <div class="proj-detail__visual">
+        <div class="sticker-container">
+          <app-sticker-circle
+            [variant]="project.sticker.variant"
+            [stickerColor]="project.sticker.stickerColor">
+          </app-sticker-circle>
+        </div>
         <img class="proj-detail__image" [src]="project.imgUrl" [alt]="project.title" />
       </div>
     </div>
 
-    <!-- Bottom: buttons + next -->
     <div class="proj-detail__actions">
       <div class="proj-detail__buttons">
         @if (project.githubUrl) {
-          <a class="proj-detail__btn" [href]="project.githubUrl" target="_blank" rel="noopener">{{ t('github') }}</a>
+          <a class="proj-detail__btn blend-diff" [href]="project.githubUrl" target="_blank" rel="noopener">{{ t('github') }}</a>
         }
         @if (project.liveUrl) {
-          <a class="proj-detail__btn" [href]="project.liveUrl" target="_blank" rel="noopener">{{ t('live') }}</a>
+          <a class="proj-detail__btn blend-diff" [href]="project.liveUrl" target="_blank" rel="noopener">{{ t('live') }}</a>
         }
       </div>
-      <a class="proj-detail__next" (click)="nextProject()">
-        <span>{{ t('next') }}</span>
-        <img src="/assets/00_Hand-drawn lines/03_Portfolio/Breadcrumbs/Next project arrow 1.png" alt="" width="24" height="24" />
+      <a class="arrow-next" (click)="nextProject()">
+        <p>{{ t('next') }}</p>
+        <img src="/assets/00_Hand-drawn lines/03_Portfolio/Breadcrumbs/Next project arrow 1.png" alt="" />
       </a>
     </div>
 

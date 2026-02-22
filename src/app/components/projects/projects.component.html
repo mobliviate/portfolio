@@ -24,7 +24,7 @@
               </app-sticker-circle>
             </div>
           }
-          <img class="showcase__card-img" [src]="project.imgUrl" [alt]="project.title" />
+          <img class="showcase__card-img" [src]="project.imgUrl" [alt]="project.title" [appImageBounce]="project.animationImg" />
           <div class="showcase__card-overlay">
             <a class="showcase__card-btn" [routerLink]="['/projects', project.id]">{{ t('details') }}</a>
           </div>

@@ -14,7 +14,12 @@ export interface ProjectDetail {
   liveUrl: string;
   imgUrl: string;
   showSticker: boolean;
+  animationImg: boolean;
   accent: string;
+  sticker: {
+    variant: 'feature' | 'logo';
+    stickerColor: 'orange' | 'blue' | 'yellow';
+  };
 }
 
 export const PROJECTS: ProjectDetail[] = [
@@ -40,7 +45,9 @@ export const PROJECTS: ProjectDetail[] = [
     liveUrl: '#',
     imgUrl: '/assets/09_Projects/Laptop.png',
     showSticker: true,
+    animationImg: true,
     accent: 'var(--color-highlight-2)',
+    sticker: { variant: 'feature', stickerColor: 'blue' },
   },
   {
     id: 'el-pollo-loco',
@@ -63,6 +70,8 @@ export const PROJECTS: ProjectDetail[] = [
     liveUrl: '#',
     imgUrl: '/assets/09_Projects/El_Pollo_Loco.png',
     showSticker: false,
+    animationImg: false,
     accent: 'var(--color-highlight-3)',
+    sticker: { variant: 'feature', stickerColor: 'orange' },
   },
 ];
