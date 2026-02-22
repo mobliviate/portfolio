@@ -21,6 +21,7 @@
   .circle-sticker__center {
     position: absolute;
     display: block;
+    height: auto;
   }
 
   .circle-sticker__logo-text {
@@ -52,8 +53,8 @@
     height: 120px;
 
     .circle-sticker__center {
-      width: 70px;
-      height: 35px;
+      width: 50px;
+      height: auto;
     }
 
     .circle-sticker__logo-text {

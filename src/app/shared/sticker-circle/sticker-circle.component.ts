@@ -27,8 +27,7 @@ interface VariantConfig {
 export class StickerCircleComponent {
   @Input() variant: StickerVariant = 'logo';
   @Input() stickerColor: StickerColor = 'orange';
-  @Input() imgWidth = 54;
-  @Input() imgHeight = 56;
+  @Input() imgWidth = 80;
   @Input() topOffset = '50%';
   @Input() bottomOffset = '50%';
 
@@ -67,7 +66,7 @@ export class StickerCircleComponent {
 
   readonly centerSrc: Record<CenterImg, string> = {
     logo: '',
-    arrow: '/assets/03_Stickers/Arrow.png',
+    arrow: '/assets/03_Stickers/00_Round/Sticker_arrow_weiss.png',
   };
 
   get config(): VariantConfig {
