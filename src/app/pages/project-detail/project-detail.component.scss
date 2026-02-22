@@ -6,7 +6,8 @@
   background-image: url('/assets/01_Background/Design Size Relation@3x/07_project_details.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #1a1a1a;
+  background-color: #1D1D1D;
+  color: var(--color-white);
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -66,6 +67,7 @@
 .proj-detail__headline {
   width: fit-content;
   min-width: 120px;
+  mix-blend-mode: difference;
 
   h1 {
     margin: 0;
@@ -101,6 +103,8 @@
 }
 
 .proj-detail__section {
+  mix-blend-mode: difference;
+
   h2 {
     margin: 0 0 16px;
     font-size: 28px;
@@ -116,6 +120,8 @@
 }
 
 .proj-detail__duration {
+  mix-blend-mode: difference;
+
   p {
     font-size: 20px;
     line-height: 30px;
@@ -143,6 +149,7 @@
   p {
     font-size: 18px;
     margin: 0;
+    mix-blend-mode: difference;
   }
 }
 
@@ -165,13 +172,16 @@
 
 /* ── Actions (bottom) ── */
 .proj-detail__actions {
-  position: relative;
+  position: absolute;
+  bottom: 2%;
+  right: 0;
 }
 
 .proj-detail__buttons {
   display: flex;
   justify-content: flex-end;
   gap: 32px;
+  padding-top: 24px;
 }
 
 .proj-detail__btn {

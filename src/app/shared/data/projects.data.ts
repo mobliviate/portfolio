@@ -13,6 +13,7 @@ export interface ProjectDetail {
   githubUrl: string;
   liveUrl: string;
   imgUrl: string;
+  detailImgUrl?: string;
   showSticker: boolean;
   animationImg: boolean;
   accent: string;
@@ -44,6 +45,7 @@ export const PROJECTS: ProjectDetail[] = [
     githubUrl: '#',
     liveUrl: '#',
     imgUrl: '/assets/09_Projects/Laptop.png',
+    detailImgUrl: '/assets/09_Projects/Join.png',
     showSticker: true,
     animationImg: true,
     accent: 'var(--color-highlight-2)',
