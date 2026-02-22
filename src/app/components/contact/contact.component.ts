@@ -3,13 +3,15 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { HttpClient } from '@angular/common/http';
 import { LocaleService } from '../../shared/services/locale.service';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
+import { StickerCircleComponent } from '../../shared/sticker-circle/sticker-circle.component';
+import { RouterLink } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, ScrollRevealDirective],
+  imports: [ReactiveFormsModule, ScrollRevealDirective, StickerCircleComponent, RouterLink],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -30,24 +32,28 @@ export class ContactComponent {
   });
 
   labels: Record<string, Record<string, string>> = {
-    subtitle: { en: 'SAY HELLO', de: 'SCHREIB MIR' },
-    title: { en: 'Contact me', de: 'Kontakt' },
+    subtitle: { en: 'CONTACT ME', de: 'KONTAKTIERE MICH' },
+    title: { en: 'Ready to work together?', de: 'Bereit zusammenzuarbeiten?' },
     intro: {
       en: 'Got a problem to solve? Interested in working together? Feel free to reach out — I look forward to hearing from you!',
       de: 'Ein Problem zu lösen? Interesse an einer Zusammenarbeit? Melde dich gerne — ich freue mich, von dir zu hören!',
     },
-    name: { en: 'Your name', de: 'Dein Name' },
-    namePlaceholder: { en: 'What\'s your name?', de: 'Wie heisst du?' },
+    name: { en: 'What\'s your name?', de: 'Wie heisst du?' },
+    namePlaceholder: { en: 'Your name goes here', de: 'Dein Name hier' },
     nameError: { en: 'Please enter your name', de: 'Bitte gib deinen Namen ein' },
-    email: { en: 'Your email', de: 'Deine E-Mail' },
-    emailPlaceholder: { en: 'your@mail.com', de: 'deine@mail.com' },
+    email: { en: 'What\'s your email?', de: 'Wie lautet deine E-Mail?' },
+    emailPlaceholder: { en: 'youremail@email.com', de: 'deine@email.com' },
     emailError: { en: 'Please enter a valid email', de: 'Bitte gib eine gültige E-Mail ein' },
-    message: { en: 'Your message', de: 'Deine Nachricht' },
-    messagePlaceholder: { en: 'Hello Marc, I\'d like to...', de: 'Hallo Marc, ich möchte gerne...' },
+    message: { en: 'How can I help you?', de: 'Wie kann ich dir helfen?' },
+    messagePlaceholder: { en: 'Hello Marc, I am interested in...', de: 'Hallo Marc, ich bin interessiert an...' },
     messageError: { en: 'Message must be at least 4 characters', de: 'Nachricht muss mindestens 4 Zeichen lang sein' },
-    privacy: { en: 'I accept the', de: 'Ich akzeptiere die' },
+    privacyPrefix: { en: 'I\'ve read the', de: 'Ich habe die' },
     privacyLink: { en: 'privacy policy', de: 'Datenschutzerklärung' },
-    send: { en: 'Send message', de: 'Nachricht senden' },
+    privacySuffix: {
+      en: 'and agree to the processing of my data as outlined.',
+      de: 'gelesen und stimme der Verarbeitung meiner Daten zu.',
+    },
+    send: { en: 'Send', de: 'Senden' },
     success: { en: 'Message sent successfully!', de: 'Nachricht erfolgreich gesendet!' },
     error: { en: 'Something went wrong. Please try again.', de: 'Etwas ist schiefgelaufen. Bitte versuche es erneut.' },
   };
@@ -68,7 +74,7 @@ export class ContactComponent {
     if (!this.canSubmit) return;
 
     this.http
-      .post('https://formspree.io/f/placeholder', this.form.value)
+      .post('https://formspree.io/f/mwvnrzgg', this.form.value)
       .subscribe({
         next: () => {
           this.submitState.set('success');

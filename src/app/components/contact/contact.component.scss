@@ -19,12 +19,14 @@
   gap: 80px;
 }
 
+/* ── Left column ── */
+
 .reach-out__info {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 48px;
-  width: 480px;
+  width: 560px;
   flex-shrink: 0;
 }
 
@@ -80,12 +82,38 @@
   to   { clip-path: inset(0 0 0 0); }
 }
 
-/* ── Form ── */
+/* ── Sticker circle ── */
+
+.reach-out__sticker {
+  position: absolute;
+  z-index: 100;
+  transform: rotate(15deg) scale(0.85);
+}
+
+.reach-out__sticker--desktop {
+  right: -10px;
+  top: -40px;
+}
+
+.reach-out__sticker--mobile {
+  display: none;
+  position: unset;
+  width: fit-content;
+  align-self: flex-end;
+}
+
+/* ── Right column (form wrapper) ── */
+
+.reach-out__form-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
 .reach-out__form {
   display: flex;
   flex-direction: column;
   width: 480px;
-  flex-shrink: 0;
+  padding-top: 55px;
 }
 
 .reach-out__field {
@@ -93,6 +121,7 @@
   flex-direction: column;
   gap: 6px;
   min-height: 90px;
+  border-top: 1px solid transparent;
   border-bottom: 1px solid var(--color-highlight-1);
   padding-top: 10px;
 
@@ -129,6 +158,10 @@
       color: var(--color-highlight-3);
     }
   }
+}
+
+.reach-out__field:has(+ .reach-out__field:hover) {
+  border-bottom-color: transparent;
 }
 
 input:-webkit-autofill,
@@ -231,7 +264,7 @@ textarea:-webkit-autofill {
 }
 
 /* ── Responsive ── */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .reach-out__inner {
     flex-direction: column;
     align-items: center;
@@ -250,11 +283,23 @@ textarea:-webkit-autofill {
   .reach-out__line {
     display: none;
   }
+
+  .reach-out__sticker--desktop {
+    display: none;
+  }
+
+  .reach-out__sticker--mobile {
+    display: block;
+  }
 }
 
 @media (max-width: 500px) {
   .reach-out {
     padding: 88px 16px 40px;
+  }
+
+  .reach-out__info {
+    max-width: 400px;
   }
 
   .reach-out__title {
@@ -270,5 +315,15 @@ textarea:-webkit-autofill {
   .reach-out__field input::placeholder,
   .reach-out__field textarea::placeholder {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 410px) {
+  .reach-out__info {
+    max-width: 270px;
+  }
+
+  .reach-out__title {
+    font-size: 32px;
   }
 }
