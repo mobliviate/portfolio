@@ -1,27 +1,62 @@
-# Portfolio
+# Portfolio – Marc Odermatt
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
+Personal portfolio website showcasing my frontend development projects, skills, and professional background.
 
-## Development server
+**[marcodermatt.ch](https://marcodermatt.ch)**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Category   | Technology                          |
+| ---------- | ----------------------------------- |
+| Framework  | Angular 17                          |
+| Language   | TypeScript                          |
+| Styling    | SCSS                                |
+| Hosting    | Docker / Nginx / Portainer          |
+| CI/CD      | GitHub Actions → GHCR → Portainer   |
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+# Install dependencies
+npm install
 
-## Running unit tests
+# Start dev server at http://localhost:4200
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Build & Deploy
 
-## Running end-to-end tests
+The project is automatically built and deployed on every push to `main`:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. GitHub Actions builds a Docker image (multi-stage: Node → Nginx)
+2. The image is pushed to GitHub Container Registry
+3. A Portainer webhook triggers the redeployment
 
-## Further help
+To build locally:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+# Production build
+ng build --configuration production
+
+# Or via Docker
+docker build -t portfolio .
+docker run -p 3000:80 portfolio
+```
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── components/     # Reusable UI components (header, hero, projects, …)
+│   ├── pages/          # Route-level pages (home, project detail, …)
+│   └── shared/         # Services, data, models
+├── assets/             # Images, icons, fonts
+└── styles/             # Global SCSS variables & mixins
+```
+
+## Contact
+
+Marc Odermatt – [info@marcodermatt.ch](mailto:info@marcodermatt.ch)
