@@ -354,8 +354,13 @@
   }
 }
 
-/* ── Tablet (≤ 1100px) ── */
-@media (max-width: 1100px) {
+/* ── Tablet (≤ 1200px) ── */
+@media (max-width: 1200px) {
+  .skills {
+    flex-direction: column;
+    padding-bottom: 120px;
+  }
+
   .skills__content {
     width: 100%;
   }
@@ -382,15 +387,17 @@
   }
 
   .skills__sticker {
-    right: 40px;
-    bottom: 160px;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 8px auto 0;
   }
 }
 
 /* ── Small tablet / large phone (≤ 768px) ── */
 @media (max-width: 768px) {
   .skills {
-    padding: 88px clamp(16px, 5vw, 40px) 160px;
+    padding: 88px clamp(16px, 5vw, 40px) 120px;
   }
 
   .skills__content {
@@ -402,17 +409,12 @@
     width: 100%;
   }
 
-  .skills__sticker {
-    right: 20px;
-    bottom: 140px;
-  }
 }
 
 /* ── Mobile (≤ 550px) ── */
 @media (max-width: 550px) {
   .skills {
     padding: 88px 16px 120px;
-    flex-direction: column;
   }
 
   .skills__content {
@@ -482,13 +484,6 @@
 
   .skills__logo-item {
     width: 80px;
-  }
-
-  .skills__sticker {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    margin: 8px auto 0;
   }
 }
 

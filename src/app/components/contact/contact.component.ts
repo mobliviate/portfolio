@@ -33,7 +33,7 @@ export class ContactComponent {
 
   labels: Record<string, Record<string, string>> = {
     subtitle: { en: 'CONTACT ME', de: 'KONTAKTIERE MICH' },
-    title: { en: 'Ready to work together?', de: 'Bereit zusammenzuarbeiten?' },
+    title: { en: 'Ready to work together?', de: 'Bereit zusammen\u00ADzu\u00ADarbeiten?' },
     intro: {
       en: 'Got a problem to solve? Interested in working together? Feel free to reach out — I look forward to hearing from you!',
       de: 'Ein Problem zu lösen? Interesse an einer Zusammenarbeit? Melde dich gerne — ich freue mich, von dir zu hören!',

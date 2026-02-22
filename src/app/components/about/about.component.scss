@@ -209,6 +209,34 @@
   }
 }
 
+/* ── Tablet (≤ 1200px) ── */
+@media (max-width: 1200px) {
+  .about {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 100px clamp(40px, 5vw, 120px);
+    gap: 48px;
+    min-height: auto;
+  }
+
+  .about__location {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .about__content {
+    width: 100%;
+    max-width: 560px;
+  }
+}
+
+/* ── Small Tablet (≤ 768px) ── */
+@media (max-width: 768px) {
+  .about {
+    padding: 88px 28px;
+  }
+}
+
 /* ── Mobile (≤ 500px) – Figma: 375 × 975 ── */
 @media (max-width: 500px) {
   .about {

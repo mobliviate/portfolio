@@ -238,12 +238,12 @@
   transform: translate(2px, 4px);
 }
 
-/* ── Polaroid (Figma: 204 × 244, left 613px from layout, overlapping text) ── */
+/* ── Polaroid (Figma: 204 × 244, anchored to right of layout, overlapping text) ── */
 .hero__polaroid {
   position: absolute;
   width: 204px;
   height: 244px;
-  left: 613px;
+  right: 48px;
   top: 6px;
   transform: rotate(8deg);
   pointer-events: auto;
@@ -354,10 +354,10 @@
   }
 
   .hero__polaroid {
-    width: 180px;
-    height: 215px;
-    right: 20px;
-    top: 80px;
+    width: 170px;
+    height: 203px;
+    right: 0;
+    top: 20px;
   }
 
   .hero__socials {
@@ -388,7 +388,6 @@
     position: relative;
     right: auto;
     top: auto;
-    left: auto;
     align-self: center;
     transform: rotate(6deg);
     margin-top: 32px;
@@ -422,7 +421,7 @@
     flex-direction: column;
     align-items: center;
     gap: 32px;
-    max-width: 343px;
+    max-width: 373px;
     width: 100%;
     margin-top: 0;
     text-align: left;
@@ -467,7 +466,6 @@
   /* Polaroid: in flow, centered */
   .hero__polaroid {
     position: relative;
-    left: auto;
     top: auto;
     right: auto;
     width: 204px;
