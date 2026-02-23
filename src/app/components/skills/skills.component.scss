@@ -4,15 +4,19 @@
   background-position-y: bottom;
   background-repeat: no-repeat;
   background-color: var(--color-white);
-  position: relative;
   z-index: 2;
   width: 100%;
+}
+
+.skills-inner {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px clamp(16px, 5vw, 120px) 200px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 100px clamp(16px, 5vw, 120px) 200px;
-  margin: 0 auto;
 }
 
 .skills-content {
@@ -175,7 +179,7 @@
 @import 'skills-sticker';
 
 @media (max-width: 1200px) {
-  .skills {
+  .skills-inner {
     flex-direction: column;
     padding-bottom: 120px;
   }
@@ -207,7 +211,7 @@
 }
 
 @media (max-width: 768px) {
-  .skills {
+  .skills-inner {
     padding: 88px clamp(16px, 5vw, 40px) 120px;
   }
 
@@ -223,7 +227,7 @@
 }
 
 @media (max-width: 550px) {
-  .skills {
+  .skills-inner {
     padding: 88px 16px 120px;
   }
 

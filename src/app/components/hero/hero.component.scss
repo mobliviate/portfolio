@@ -7,7 +7,6 @@
   width: 100%;
   height: 100vh;
   min-height: 700px;
-  padding: 0 72px;
   color: var(--color-white);
   background-image: url('/assets/01_Background/Design Size Relation@3x/01_Hero.png');
   background-size: cover;
@@ -15,6 +14,17 @@
   background-repeat: no-repeat;
   background-color: #F8F9FA;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  padding: 0 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -295,7 +305,8 @@
 }
 
 @media (max-width: 1100px) {
-  .hero { height: auto; min-height: 750px; padding: 100px 48px 100px; align-items: unset; }
+  .hero { height: auto; min-height: 750px; align-items: unset; }
+  .hero-inner { padding: 100px 48px 100px; }
   .hero-layout { margin-top: 0; }
   .hero-content { padding-right: 190px; }
   .hero-polaroid { width: 170px; height: 203px; right: 187px; top: 0px; }
@@ -303,7 +314,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 120px 28px 60px; }
+  .hero-inner { padding: 120px 28px 60px; }
   .hero-layout { display: flex; flex-direction: column; align-items: center; text-align: center; }
   .hero-content { align-items: center; padding-right: 0; }
   .hero-headline { align-items: center; }
@@ -314,7 +325,8 @@
 }
 
 @media (max-width: 500px) {
-  .hero { height: 812px; min-height: unset; padding: 0 16px; display: flex; align-items: center; justify-content: center; }
+  .hero { height: 812px; min-height: unset; }
+  .hero-inner { padding: 0 16px; }
   .hero-layout { display: flex; flex-direction: column; align-items: center; gap: 32px; max-width: 373px; width: 100%; text-align: left; }
   .hero-content { align-items: flex-start; gap: 40px; width: 100%; }
   .hero-badge { margin-bottom: 0; align-self: flex-start; }

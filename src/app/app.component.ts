@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs';
 import { HeaderComponent } from './components/header/header.component';
 
 @Component({
@@ -15,5 +16,14 @@ export class AppComponent {
 
   constructor() {
     inject(ViewportScroller).setOffset([0, 80]);
+
+    let previousUrl = '';
+    inject(Router).events.pipe(
+      filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+    ).subscribe((e) => {
+      const sameUrl = e.urlAfterRedirects === previousUrl;
+      previousUrl = e.urlAfterRedirects;
+      window.scrollTo({ top: 0, left: 0, behavior: sameUrl ? 'smooth' : 'instant' });
+    });
   }
 }

@@ -1,48 +1,49 @@
 <section class="skills" id="skills">
-  <div class="skills-content">
-    <div class="skills-title-text">
-      <div class="skills-header">
-        <span class="skills-subtitle">{{ t('subtitle') }}</span>
-        <div class="skills-title-wrap">
+  <div class="skills-inner">
+    <div class="skills-content">
+      <div class="skills-title-text">
+        <div class="skills-header">
+          <span class="skills-subtitle">{{ t('subtitle') }}</span>
+          <div class="skills-title-wrap">
+            <img
+              class="skills-circle-line"
+              src="/assets/00_Hand-drawn lines/02_Skills/Color option 1.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <h2 class="skills-title">{{ t('title') }}</h2>
+          </div>
+        </div>
+
+        <div class="skills-description">
           <img
-            class="skills-circle-line"
-            src="/assets/00_Hand-drawn lines/02_Skills/Color option 1.png"
+            class="skills-description-bg"
+            src="/assets/02_Ripped Paper/1.Skills description.png"
             alt=""
             aria-hidden="true"
           />
-          <h2 class="skills-title">{{ t('title') }}</h2>
+          <p class="skills-description-text">{{ t('description') }}</p>
         </div>
       </div>
 
-      <div class="skills-description">
-        <img
-          class="skills-description-bg"
-          src="/assets/02_Ripped Paper/1.Skills description.png"
-          alt=""
-          aria-hidden="true"
-        />
-        <p class="skills-description-text">{{ t('description') }}</p>
-      </div>
-    </div>
-
-    <div class="skills-logos">
-      @for (skill of skills; track skill.name) {
-        <div class="skills-logo-item">
-          <div class="skills-logo-icon">
-            <img [src]="skill.icon" [alt]="skill.name" />
+      <div class="skills-logos">
+        @for (skill of skills; track skill.name) {
+          <div class="skills-logo-item">
+            <div class="skills-logo-icon">
+              <img [src]="skill.icon" [alt]="skill.name" />
+            </div>
+            <span class="skills-logo-label">{{ skill.name }}</span>
           </div>
-          <span class="skills-logo-label">{{ skill.name }}</span>
-        </div>
-      }
+        }
+      </div>
     </div>
-  </div>
 
-  <div
-    class="skills-sticker"
-    [class.skills-sticker--transition]="stickerState === 'transition'"
-    [class.skills-sticker--final]="stickerState === 'final'"
-    (click)="peelSticker()"
-  >
+    <div
+      class="skills-sticker"
+      [class.skills-sticker--transition]="stickerState === 'transition'"
+      [class.skills-sticker--final]="stickerState === 'final'"
+      (click)="peelSticker()"
+    >
     <img
       class="skills-sticker-layer skills-sticker-layer--final"
       src="/assets/03_Stickers/01_Skills - Peel off/Final.png"
@@ -97,6 +98,7 @@
         aria-hidden="true"
       />
       <span class="skills-sticker-text" [innerHTML]="t('stickerPull')"></span>
+      </div>
     </div>
   </div>
 </section>
