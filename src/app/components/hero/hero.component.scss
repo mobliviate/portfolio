@@ -204,7 +204,7 @@
   width: 204px;
   height: 244px;
   right: 48px;
-  top: -5px;
+  top: -30px;
   transform: rotate(8deg);
   pointer-events: auto;
   margin: 0;
@@ -297,16 +297,19 @@
 @media (max-width: 1100px) {
   .hero { height: auto; min-height: 750px; padding: 100px 48px 100px; align-items: unset; }
   .hero-layout { margin-top: 0; }
-  .hero-polaroid { width: 170px; height: 203px; right: 0; top: 20px; }
+  .hero-content { padding-right: 190px; }
+  .hero-polaroid { width: 170px; height: 203px; right: 187px; top: 0px; }
   .hero-socials { left: 40px; bottom: 90px; }
 }
 
 @media (max-width: 768px) {
   .hero { padding: 120px 28px 60px; }
-  .hero-layout { align-items: center; text-align: center; }
-  .hero-content { align-items: center; }
+  .hero-layout { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-content { align-items: center; padding-right: 0; }
   .hero-headline { align-items: center; }
-  .hero-polaroid { position: relative; left: 20%; top: auto; align-self: center; transform: rotate(6deg); margin-top: 32px; }
+  .hero-headline-primary,
+  .hero-headline-secondary { align-self: center; }
+  .hero-polaroid { position: relative; left: auto; right: auto; top: auto; align-self: center; transform: rotate(6deg); margin-top: 32px; width: 180px; height: 215px; }
   .hero-cta { align-self: center; }
 }
 

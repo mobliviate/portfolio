@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { ViewportScroller } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { LocaleService } from '../../shared/services/locale.service';
 import { IconRollDirective } from '../../shared/directives/icon-roll.directive';
 
@@ -13,8 +12,6 @@ import { IconRollDirective } from '../../shared/directives/icon-roll.directive';
 })
 export class FooterComponent {
   locale = inject(LocaleService);
-  private router = inject(Router);
-  private scroller = inject(ViewportScroller);
 
   labels: Record<string, Record<string, string>> = {
     imprint: { en: 'Legal Notice', de: 'Impressum' },
@@ -23,11 +20,5 @@ export class FooterComponent {
 
   t(key: string): string {
     return this.labels[key]?.[this.locale.current] ?? '';
-  }
-
-  goToContact(): void {
-    this.router.navigate(['/'], { fragment: 'contact' }).then(() => {
-      setTimeout(() => this.scroller.scrollToAnchor('contact'), 200);
-    });
   }
 }

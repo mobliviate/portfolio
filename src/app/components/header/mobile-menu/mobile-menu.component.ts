@@ -28,10 +28,21 @@ export class MobileMenuComponent {
     return this.labels[key]?.[this.locale.current] ?? '';
   }
 
+  private static readonly SCROLL_OFFSET = 0;
+
   goTo(section: string): void {
     this.nav.close();
+    const html = document.documentElement;
+    html.style.scrollBehavior = 'auto';
     this.router.navigate(['/'], { fragment: section }).then(() => {
-      setTimeout(() => this.scroller.scrollToAnchor(section), 120);
+      setTimeout(() => {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - MobileMenuComponent.SCROLL_OFFSET;
+          window.scrollTo(0, Math.max(0, top));
+        }
+        html.style.scrollBehavior = '';
+      }, 120);
     });
   }
 }

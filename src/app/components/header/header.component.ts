@@ -37,7 +37,7 @@ export class HeaderComponent {
 
   @HostListener('window:resize')
   onResize(): void {
-    if (window.innerWidth > 500 && this.mobileNav.isOpen()) {
+    if (window.innerWidth > 620 && this.mobileNav.isOpen()) {
       this.mobileNav.close();
     }
   }
