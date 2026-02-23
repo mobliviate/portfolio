@@ -303,6 +303,11 @@
 .hero-social-link:focus-visible {
   background: var(--color-highlight-2);
 }
+@media (min-width: 2500px) {
+  .hero-socials {
+    bottom: 250px;
+  }
+}
 
 @media (max-width: 1100px) {
   .hero { height: auto; min-height: 750px; align-items: unset; }
